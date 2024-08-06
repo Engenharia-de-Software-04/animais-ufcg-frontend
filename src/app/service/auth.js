@@ -9,6 +9,10 @@ const api = axios.create({
 });
 
 export const postAdmin = async (formData) => {
-    await api.post(`/register`, formData)
+    await api.post(`/auth/register`, formData)
+}
+
+export const loginAdmin = async (formData) => {
+    await api.post(`/auth/login`, formData)
 }
 

@@ -22,7 +22,7 @@ const handlePostAdmin = async (event) => {
     const res = await postAdmin(formData)
 }
 
-export default function Login() {
+export default function Register() {
     return <div className="form-wrapper">
         <Flex bg="white">
             <Center w='100%' h="100vh">
