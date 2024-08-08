@@ -1,23 +1,30 @@
-"use client"; // Ensure this is at the very top
+"use client";
 
 import React, { useState } from 'react';
 import { Flex, Center, FormControl, FormLabel, Input, Button, Text } from '@chakra-ui/react';
-import { loginAdmin } from '@/app/service/auth'; // Adjust the path as needed
-
-const handleLoginAdmin = async (event) => {
-    event.preventDefault();
-
-    const form = event.target;
-    const formData = new FormData(form);
-
-    const data = Object.fromEntries(formData.entries());
-
-    console.log(data);
-
-    const res = await loginAdmin(formData);
-};
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
+    const router = useRouter();
+
+    const handleLoginAdmin = async (event) => {
+        event.preventDefault();
+    
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries())
+    
+        const result = await signIn('credentials', {
+            redirect: false,
+            email: data["email"],
+            password: data["password"],
+        });
+
+        if (result["status"] == 200) {
+            router.push("/admin")
+        }
+    };
 
     return (
         <div className="form-wrapper">
