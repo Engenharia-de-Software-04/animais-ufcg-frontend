@@ -4,3 +4,8 @@
     margin: 0;
     list-style: none;
 }
+
+body {
+    min-width: 100vw;
+    overflow-x: hidden;
+}
