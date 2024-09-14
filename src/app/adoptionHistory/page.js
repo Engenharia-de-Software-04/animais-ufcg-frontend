@@ -5,14 +5,13 @@ import Menu from '@/components/Menu';
 import HistoryCard from "@/components/HistoryCard";
 
 export default function AdoptionHistory() {
-    return <div>
+    return <div className="adoption-history-wrapper">
         <Menu/>
         <div className='adoption-history'>
             <div className="history-cards">
                 <HistoryCard/>
                 <HistoryCard/>
                 <HistoryCard/>
-                
             </div>
         </div>
     </div>;
