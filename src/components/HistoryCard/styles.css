@@ -7,20 +7,9 @@
     border-radius: 35px;
     display: flex;
     flex-direction: row;
+    background-color: #FAC857;
 }
-
-.history-card::before {
-    border-radius: 35px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    background-color: #FFB210;
-    opacity: 0.75;
-    content: "";
-    height: 100%;
-    width: 100%;
-}
+/*  */
 
 .history-card-right{
     height: 190px;

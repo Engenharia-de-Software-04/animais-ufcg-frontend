@@ -15,5 +15,16 @@ html{
 body {
     width: 100%;
     height: 100%;
+    background-image: url('/images/bg-patinhas.webp') !important;
+    background-size: contain !important;
+    background-repeat: repeat !important;
     overflow-x: hidden;
+    z-index: -1;
+}
+
+.body-bg{
+    width: 100%;
+    height: 100% !important;
+    background-color: #fff;
+    z-index: 1;
 }
