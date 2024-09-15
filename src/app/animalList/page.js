@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import CardAnimal from "@/components/CardAnimal/CardAnimal";
 import Menu from "@/components/Menu";
 import "./styles.css";
-import back from "../../../assets/images/background.png"
 import ConfirmBox from "@/components/ConfirmBox/ConfirmBox";
 import Animals from "@/components/Animals"
 
