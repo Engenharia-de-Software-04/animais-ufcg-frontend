@@ -1,0 +1,28 @@
+.register-adoption-history-title{
+    width: 100%;
+}
+
+.register-adoption-history-title h1{
+    color: #3A2719;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.register-adoption-history-body{
+    display: flex;
+    justify-content: center;
+}
+
+.register-adoption-history-body form{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-adoption-history-body form input{
+    /* font-family: ; */
+    background-color: #F3F3F3;
+}
