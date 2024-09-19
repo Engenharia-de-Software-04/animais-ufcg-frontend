@@ -15,7 +15,7 @@ export default function animalProfileAdmin(){
         {/* <img src="images/cat.png" alt="gato"/>
         <input type="file"/> */}
         <InputAnimalsPicture/>
-        {/* <div className="register-grid">
+        <div className="register-grid">
             <FormInput placeholder="Nome" contentEditable={false} sizeInput="small"/>
             <FormInput placeholder="Raça" sizeInput="small"/>
             <FormSelect defaultValue="Sexo" options={["Macho", "Fêmea"]}/>
@@ -23,11 +23,11 @@ export default function animalProfileAdmin(){
             <FormSelect defaultValue="Estágio da vida" options={["Filhote", "Adulto", "Idoso"]}/>
             <FormSelect defaultValue="É castrado ?" options={["Castrado", "Não castrado"]}/>
             <FormSelect defaultValue="É vacinado ?" options={["Vacinado", "Não vacinado"]}/>
-        </div> */}
+        </div>
         
         {/* <FormInput placeholder="Descrição" sizeInput="big" /> */}
-        {/* <TextArea placeholder="Relato"/>
-        <button className="button-save">Salvar</button> */}
+        <TextArea placeholder="Relato"/>
+        <button className="button-save">Salvar</button>
 
         
     </div>
