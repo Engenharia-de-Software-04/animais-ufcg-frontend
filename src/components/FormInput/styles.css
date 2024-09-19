@@ -1,13 +1,28 @@
+.generic-input::placeholder {
+    opacity: 0.8;
+}
+
+.generic-input::placeholder, .generic-input {
+    color: #3A2719;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.generic-input {
+    padding: 15px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background-color: #f3f3f3;
+    color: #3A2719;
+}
+
 .input-small {
     height: 60px;
     width: 400px;
-    border-radius: 20px;
-
 }
 
 .input-big {
     height: 95px;
     width: 600px;
-    border-radius: 20px;
-
 }
