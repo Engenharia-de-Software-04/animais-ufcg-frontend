@@ -18,12 +18,14 @@
     width: 400px;
 }
 
-/* .input-small {
-    height: 60px;
-    width: 400px;
+@media (max-width: 600px) {
+    .generic-input {
+        width: 250px;
+    }
 }
 
-.input-big {
-    height: 95px;
-    width: 600px;
-} */
+@media (max-width: 400px) {
+    .generic-input {
+        width: 200px;
+    }
+}

@@ -17,3 +17,17 @@
     background-color: #f3f3f3;
     color: #3A2719;
 }
+
+@media (max-width: 600px) {
+    .generic-textarea {
+        width: 400px;
+    }
+}
+
+@media (max-width: 400px) {
+    .generic-textarea {
+        width: 280px;
+    }
+}
+
+
