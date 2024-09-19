@@ -15,9 +15,10 @@
     border: 2px solid #000;
     background-color: #f3f3f3;
     color: #3A2719;
+    width: 400px;
 }
 
-.input-small {
+/* .input-small {
     height: 60px;
     width: 400px;
 }
@@ -25,4 +26,4 @@
 .input-big {
     height: 95px;
     width: 600px;
-}
+} */
