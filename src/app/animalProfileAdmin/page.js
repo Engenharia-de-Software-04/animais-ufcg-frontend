@@ -4,6 +4,7 @@ import "./styles.css";
 import Menu from '@/components/Menu';
 import FormInput from "@/components/FormInput/FormInput";
 import FormSelect from "@/components/FormSelect/FormSelect";
+import TextArea from "@/components/TextArea";
 
 export default function animalProfileAdmin(){
 
@@ -22,7 +23,8 @@ export default function animalProfileAdmin(){
             <FormSelect defaultValue="É vacinado ?" options={["Vacinado", "Não vacinado"]}/>
         </div>
         
-        <FormInput placeholder="Descrição" sizeInput="big" />
+        {/* <FormInput placeholder="Descrição" sizeInput="big" /> */}
+        <TextArea placeholder="Relato"/>
         <button className="button-save">Salvar</button>
 
         
