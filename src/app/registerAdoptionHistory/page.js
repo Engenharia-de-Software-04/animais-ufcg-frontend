@@ -1,5 +1,9 @@
+"use client";
 import Menu from "@/components/Menu";
 import "./styles.css"
+import FormInput from "@/components/FormInput/FormInput";
+import TextArea from "@/components/TextArea";
+import InputAnimalsPicture from "@/components/InputAnimalsPicture";
 
 export default function RegisterAdoptionHistory() {
     return (
@@ -11,9 +15,10 @@ export default function RegisterAdoptionHistory() {
                 </div>
                 <div className="register-adoption-history-body">
                     <form>
-                        <input type="text" placeholder="Tutor"/>
-                        <input type="text" placeholder="Animal"/>
-                        <input type="text" placeholder="Relato"/>
+                        <InputAnimalsPicture/>
+                        <FormInput placeholder="Tutor"/>
+                        <FormInput placeholder="Animal"/>
+                        <TextArea placeholder="Relato"/>
                         <button type="submit">Salvar</button>
                     </form>
                 </div>
