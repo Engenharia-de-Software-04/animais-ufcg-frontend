@@ -6,8 +6,10 @@ import "./styles.css";
 import ConfirmBox from "@/components/ConfirmBox/ConfirmBox";
 import Animals from "@/components/Animals"
 import { getAllAnimals } from "../service/index";
+import { useSession } from "next-auth/react";
 
 export default function AnimalList() {
+    const { data: session } = useSession();
     const [animalsList, setAnimalsList] = useState([]);
     const [isModalOpen, setModalOpen] = useState(false);
     const [animalToRemove, setAnimalToRemove] = useState(null);
@@ -75,6 +77,7 @@ export default function AnimalList() {
                             estagioDeVida={animal.animalAge}
                             status={animal.statusAnimal}
                             onRemove={() => handleOpenModal(animal.id)}
+                            admin={session}
                         />
                     ))}
                     <ConfirmBox
