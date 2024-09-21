@@ -9,30 +9,30 @@ export default function AboutUs() {
     return (
         <>
             <Menu />
-            <Flex 
+            <Flex
                 direction="column"
                 bg="white"
                 minHeight="100vh"
-                overflow="hidden"
                 width="100vw"
             >
-                <Box width="100%" height="300px" position="relative">
+                <Box 
+                width="100%" 
+                height="300px"
+                position="relative"
+                >
                     <Image
                         src="images/animals.webp"
                         alt="Imagem do topo"
                         objectFit="cover"
                         width="100%"
                         height="100%"
-                        zIndex="1"
                     />
                 </Box>
+
                 <Box
                     bg="#3A2719"
                     p={4}
                     textAlign="center"
-                    position="relative"
-                    bottom="29px"
-                    zIndex="0"
                 >
                     <Text
                         fontFamily="Trebuchet MS, sans-serif"
@@ -46,38 +46,33 @@ export default function AboutUs() {
                 <Box
                     bg="rgba(255, 178, 16, 0.7)"
                     p={4}
-                    position="absolute"
-                    top="580px"
-                    left="10%"
-                    width="80%"
-                    mt={6}
+                    width="76%"
+                    mt="70px"
                     borderRadius="15px"
-                    marginLeft='200px'
-                    alignItems="center"
-                    justifyContent="center"
+                    ml="22%"
+                    textAlign="center"
                 >
                     <Text
                         fontFamily="Trebuchet MS, sans-serif"
                         fontSize="30px"
                         color="#3A2719"
-                        marginLeft='10px'
                     >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam odio nec lacus aliquam dapibus. Nullam sed scelerisque orci. Cras non odio faucibus, lobortis nisi nec, scelerisque orci. Proin non tortor lorem. Etiam non tempor dui. In vitae tellus risus.
+                        A Animais UFCG surgiu como uma solução para melhorar a vida dos bichinhos que habitam o campus da Universidade Federal de Campina Grande. Diante da crescente população de animais em situação de vulnerabilidade, um grupo de voluntários apaixonados por animais decidiu se unir para proporcionar melhores condições de vida a esses seres tão especiais.
                     </Text>
                 </Box>
 
                 <Box
                     bg="#B85B2D"
                     p={4}
-                    position="absolute"
-                    top="700px"
-                    right="1150px"
-                    width="368px"
+                    width="350px"
                     height="70px"
                     borderRadius="15px"
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
+                    mt="-7%"
+                    mb={50}
+                    ml="0.5%"
                 >
                     <Text
                         fontFamily="Trebuchet MS, sans-serif"
@@ -91,21 +86,17 @@ export default function AboutUs() {
                 <Box
                     bg="rgba(255, 178, 16, 0.7)"
                     p={4}
-                    position="absolute"
-                    top="200px"
-                    left="-12.6%"
-                    width="80%"
-                    mt="760px"
+                    width="76%"
+                    mt="5%"
                     borderRadius="15px"
-                    marginLeft='200px'
-                    alignItems="center"
-                    justifyContent="center"
+                    mx="auto"
+                    textAlign="center"
+                    mr="22%"
                 >
                     <Text
                         fontFamily="Trebuchet MS, sans-serif"
                         fontSize="30px"
                         color="#3A2719"
-                        marginLeft='10px'
                     >
                         Nossa missão é dedicar-nos aos cuidados, resgate e promoção do bem-estar dos animais da Universidade Federal de Campina Grande (UFCG). Acreditamos que todos os seres vivos merecem amor, respeito e cuidados adequados. Nossa equipe trabalha incansavelmente para garantir que os animais em situação de vulnerabilidade tenham acesso a adoção, alimentação e cuidados. Junte-se a nós nessa causa e ajude a transformar a vida dos nossos amigos peludos!
                     </Text>
@@ -114,15 +105,15 @@ export default function AboutUs() {
                 <Box
                     bg="#B85B2D"
                     p={4}
-                    position="absolute"
-                    top="1170px"
-                    right="16px"
-                    width="368px"
+                    width="350px"
                     height="70px"
                     borderRadius="15px"
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
+                    mt="-7%"
+                    mb={50}
+                    ml="76%"
                 >
                     <Text
                         fontFamily="Trebuchet MS, sans-serif"
@@ -136,25 +127,53 @@ export default function AboutUs() {
                 <Box
                     bg="rgba(255, 178, 16, 0.7)"
                     p={4}
-                    position="absolute"
-                    top="1330px"
-                    width="80%"
-                    mt={6}
+                    width="76%"
+                    mt="60px"
                     borderRadius="15px"
-                    marginLeft='200px'
-                    alignItems="center"
-                    justifyContent="center"
+                    mx="auto"
+                    mb={6}
+                    textAlign="center"
                 >
                     <Text
                         fontFamily="Trebuchet MS, sans-serif"
                         fontSize="30px"
                         color="#3A2719"
-                        marginLeft='10px'
                     >
-                        
-O cuidado com os animais é uma responsabilidade que todos devemos assumir. Eles são seres que sentem dor, alegria e amor, e merecem ser tratados com respeito e dignidade. O abandono e a negligência são realidades tristes que muitos animais enfrentam diariamente. É fundamental conscientizar a sociedade sobre a importância de não abandonar os pets e garantir que eles recebam os cuidados adequados. A Animais UFCG surgiu com a vontade de cuidar desses seres tão preciosos. Junte-se a nós nessa causa e ajude a criar um mundo melhor para os animais!
+                        O cuidado com os animais é uma responsabilidade que todos devemos assumir. Eles são seres que sentem dor, alegria e amor, e merecem ser tratados com respeito e dignidade. O abandono e a negligência são realidades tristes que muitos animais enfrentam diariamente. É fundamental conscientizar a sociedade sobre a importância de não abandonar os pets e garantir que eles recebam os cuidados adequados. A Animais UFCG surgiu com a vontade de cuidar desses seres tão preciosos. Junte-se a nós nessa causa e ajude a criar um mundo melhor para os animais!
                     </Text>
                 </Box>
+
+                <Box 
+                width="100%"
+                height="auto"
+                mt={5}
+                position="absolute"
+                >
+                    <Image
+                        src="images/historyImage.png"
+                        alt="Imagem história"
+                        objectFit="cover"
+                        width="7%"
+                        height="auto"
+                        mt="30%"
+                        ml="8%"
+                    />
+            </Box>
+            <Box
+            width="100%"
+            height="auto"
+            mt={6}
+            position="absolute">
+                    <Image
+                        src="images/paws.png"
+                        alt="imagem"
+                        objectFit="cover"
+                        width="10%"
+                        height="auto"
+                        mt="52%"
+                        ml="84%"
+                    />
+    </Box>
             </Flex>
         </>
     );
