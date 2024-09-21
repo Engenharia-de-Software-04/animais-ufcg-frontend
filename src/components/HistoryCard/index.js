@@ -14,7 +14,7 @@ export default function HistoryCard(props) {
                 <p>{props.description}</p>
                 {props.isAdmin && (
                     <div className="button-adoption-history-wrapper">
-                        <button onClick={props.handleOpenModel} className="button-adoption-history" type="button">Remover</button>
+                        <button onClick={props.onRemove} className="button-adoption-history" type="button">Remover</button>
                         <button className="button-adoption-history" type="button">Editar</button>
                     </div>
                 )}

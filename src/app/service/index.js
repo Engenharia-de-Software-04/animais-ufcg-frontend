@@ -31,3 +31,8 @@ export const getAnimalByID = async (id) => {
     const res = await api.get(`/animal/${id}`)
     return res
 }
+
+export const deleteAdoptionHistory = async (id) => {
+    const res = await api.delete(`/adoption_report/${id}`)
+    return res
+}
