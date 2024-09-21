@@ -1,0 +1,108 @@
+.history-card {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    margin: 40px 0px;
+    padding: 30px 70px;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: row;
+    background-color: #FAC857;
+}
+/*  */
+
+.history-card-right{
+    height: 190px;
+    min-width: 190px;
+    color: #3A2719;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sick-dog-wrapper{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* background-image: url('/images/sick-dog.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.85;
+}
+
+.history-card-left{
+    text-align: center;
+    padding: 0px 30px;
+}
+
+.history-card-left h2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #3A2719;
+    margin-bottom: 10px;
+}
+
+.history-card-left p {
+    color: #fff;
+}
+
+.history-cards > div:nth-child(even) {
+    background-color: #A5E8F1;
+}
+
+.history-cards > div:nth-child(even) p {
+    color: #3A2719;
+}
+
+@media (max-width: 900px) {
+    .history-card-left h2 {
+        font-size: 25px;
+        /* margin-bottom: 10px; */
+        font-size: 20px;
+    }
+    
+    .history-card-left p {
+        font-size: 14px;
+    }
+
+    .history-card-right{
+        height: 160px;
+        min-width: 160px;
+        color: #3A2719;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 770px) {
+    .history-card {
+        height: 400px;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 10px;
+    }
+
+    .history-card-right {
+        max-height: 190px;
+        max-width: 190px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 430px) {
+    .history-card {
+        height: 450px;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 10px;
+    }
+
+    .history-card-right {
+        max-height: 190px;
+        max-width: 190px;
+        margin-bottom: 10px;
+    }
+}
+  

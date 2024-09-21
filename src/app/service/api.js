@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import axios from 'axios';
 import { getSession } from 'next-auth/react';
 
@@ -9,33 +8,28 @@ const api = axios.create({
     headers: { 'Content-Type': 'application/json' }
 });
 
+// Interceptor para adicionar o token de autenticação
 api.interceptors.request.use(async (request) => {
     const session = await getSession();
     if (session) {
         request.headers.Authorization = `Bearer ${session.accessToken}`;
     }
     return request;
-  });
+});
 
 const handleError = (e) => {
-    return e.response
+    return e.message
 }
-  
+
+// Interceptor para tratar erros
 api.interceptors.response.use(
     (response) => {
         return response;
     },
     (error) => {
-        return handleError(error);
-    },
+        handleError(error); // Defina a função handleError para tratar os erros
+        return Promise.reject(error); // Adicione isso para garantir que o erro seja propagado
+    }
 );
-=======
-import api from './api';
->>>>>>> dev
 
-export const postAdmin = async (formData) => {
-    const res = await api.post(`/auth/register`, formData)
-    return res
-
-}
-
+export default api;
