@@ -17,34 +17,37 @@ export default function Register() {
     const [error, setError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [serverError, setServerError] = useState('');
-    const [emailError, setEmailError] = useState(''); 
+    const [emailError, setEmailError] = useState('');
+    const [password, setPassword] = useState('');
+    const [password1, setPassword1] = useState('');
 
     const handlePostAdmin = async (event) => {
         event.preventDefault();
 
-        const form = event.target.elements;
-        const password = form.password.value;
-        const password1 = form.password1.value;
-
         if (password.length <= 8) {
             setPasswordError('A senha deve ter no mínimo 8 dígitos');
+            setPassword('');
+            setPassword1('');
             return;
         }
 
         if (password !== password1) {
             setError('As senhas não coincidem');
+            setPassword('');
+            setPassword1('');
             return;
         }
-        setError(''); 
-        setPasswordError(''); 
-        setServerError(''); 
-        setEmailError(''); 
-        
+        setError('');
+        setPasswordError('');
+        setServerError('');
+        setEmailError('');
+
+        const form = event.target.elements;
         const res = await postAdmin({ name: form.nome.value, email: form.email.value, password: password });
         if (res && res.status === 200) {
             router.push('/admin/login');
         } else if (res.status === 400) {
-            setServerError(res.data || "Parâmetros inválidos")
+            setServerError(res.data || "Parâmetros inválidos");
         }
     };
 
@@ -109,6 +112,8 @@ export default function Register() {
                                     name='password'
                                     placeholder='Senha'
                                     required
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
                                     border={`1px solid ${error || passwordError ? 'red' : 'gray'}`}
                                     bg="white"
                                     borderRadius="25px"  
@@ -121,6 +126,8 @@ export default function Register() {
                                     name='password1'
                                     placeholder='Confirme a senha'
                                     required
+                                    value={password1}
+                                    onChange={(e) => setPassword1(e.target.value)}
                                     border={`1px solid ${error || passwordError ? 'red' : 'gray'}`}
                                     bg="white"
                                     borderRadius="25px"  

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import axios from 'axios';
 import { getSession } from 'next-auth/react';
 
@@ -29,9 +28,6 @@ api.interceptors.response.use(
         return handleError(error);
     },
 );
-=======
-import api from './api';
->>>>>>> dev
 
 export const postAdmin = async (formData) => {
     const res = await api.post(`/auth/register`, formData)
