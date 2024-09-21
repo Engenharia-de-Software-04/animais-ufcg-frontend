@@ -12,6 +12,12 @@ export default function HistoryCard(props) {
             <div className="history-card-left">
                 <h2>{props.name}</h2>
                 <p>{props.description}</p>
+                {props.isAdmin && (
+                    <div className="button-adoption-history-wrapper">
+                        <button onClick={props.onRemove} className="button-adoption-history" type="button">Remover</button>
+                        <button className="button-adoption-history" type="button">Editar</button>
+                    </div>
+                )}
             </div>
         </div>
     )
