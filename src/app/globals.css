@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/bg-patinhas.webp') !important;
+    background-size: contain !important;
+    background-repeat: repeat !important;
+    overflow-x: hidden;
+    z-index: -1;
+}
+
+.body-bg{
+    width: 100%;
+    height: 100% !important;
+    background-color: #fff;
+    z-index: 1;
+}
