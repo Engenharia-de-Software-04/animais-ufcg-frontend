@@ -5,7 +5,7 @@ import Menu from "@/components/Menu";
 import "./styles.css";
 import ConfirmBox from "@/components/ConfirmBox/ConfirmBox";
 import Animals from "@/components/Animals"
-import { getAllAnimals } from "../service/index";
+import { deleteAnimal, getAllAnimals } from "../service/index";
 
 export default function AnimalList() {
     const [animalsList, setAnimalsList] = useState([]);
@@ -43,11 +43,23 @@ export default function AnimalList() {
     }, []);
 
     const handleRemove = () => {
+        const callDeleteAnimal = async () => {
+            try {
+                const resposta = await deleteAnimal(animalToRemove);
+            } catch (error) {
+                console.error("Erro ao buscar animais:", error);
+            }
+        };
+        callDeleteAnimal();
+
         setAnimalsList((prevAnimais) =>
             prevAnimais.filter((animal) => animal.id !== animalToRemove)
         );
         setModalOpen(false);
         setAnimalToRemove(null);
+
+
+
     };
 
     const handleOpenModal = (id) => {
