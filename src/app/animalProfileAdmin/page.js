@@ -12,22 +12,27 @@ export default function animalProfileAdmin(){
     return( 
     <div>
         <Menu/>
-        {/* <img src="images/cat.png" alt="gato"/>
-        <input type="file"/> */}
-        <InputAnimalsPicture/>
-        <div className="register-grid">
-            <FormInput placeholder="Nome" contentEditable={false} sizeInput="small"/>
-            <FormInput placeholder="Raça" sizeInput="small"/>
-            <FormSelect defaultValue="Sexo" options={["Macho", "Fêmea"]}/>
-            <FormSelect defaultValue="Tipo" options={["Gato", "Cachorro", "Outro"]}/>
-            <FormSelect defaultValue="Estágio da vida" options={["Filhote", "Adulto", "Idoso"]}/>
-            <FormSelect defaultValue="É castrado ?" options={["Castrado", "Não castrado"]}/>
-            <FormSelect defaultValue="É vacinado ?" options={["Vacinado", "Não vacinado"]}/>
-        </div>
+        <h1 className="page-title">Cadastro</h1>
+        <form className="top-form">
+            <InputAnimalsPicture/>
+            <div className="center-form">
+                <FormInput className ="form-input" placeholder="Nome" contentEditable={false} />
+                <FormInput className ="form-input" placeholder="Raça" sizeInput="small"/>
+                <FormSelect className="form-select" defaultValue="Sexo" options={["Macho", "Fêmea"]}/>
+                <FormSelect className="form-select" defaultValue="Tipo" options={["Gato", "Cachorro", "Outro"]}/>
+                <FormSelect className="form-select" defaultValue="Estágio da vida" options={["Filhote", "Adulto", "Idoso"]}/>
+                <FormSelect className="form-select" defaultValue="É castrado ?" options={["Castrado", "Não castrado"]}/>
+                <FormSelect className="form-select" defaultValue="É vacinado ?" options={["Vacinado", "Não vacinado"]}/>
+            </div>
+            
+            <div className="text-area-container">
+                <TextArea className="text-area" placeholder="Relato"/>
+            </div>
+            
+
+            <button className="button-save">Salvar</button>
+        </form>
         
-        {/* <FormInput placeholder="Descrição" sizeInput="big" /> */}
-        <TextArea placeholder="Relato"/>
-        <button className="button-save">Salvar</button>
 
         
     </div>

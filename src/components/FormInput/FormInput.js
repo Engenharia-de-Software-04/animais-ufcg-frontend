@@ -1,9 +1,9 @@
 import "./styles.css";
 
-export default function FormInput({placeholder, contentEditable, sizeInput}) {
+export default function FormInput({placeholder, contentEditable}) {
     return(
         <div>
-            <input type="text" className={`generic-input input-${sizeInput}`} placeholder={placeholder} contentEditable={contentEditable}/>
+            <input type="text" className="generic-input" placeholder={placeholder} contentEditable={contentEditable}/>
         </div>
     );
     
