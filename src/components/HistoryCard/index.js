@@ -1,18 +1,20 @@
 "use client";
 import "./styles.css";
 
-    export default function HistoryCard({ isAdmin, handleOpenModel }) {
+export default function HistoryCard(props) {
     return (
         <div className="history-card">
             <div className="history-card-right">
-                <div className="sick-dog-wrapper"></div>
+                <div className="sick-dog-wrapper" 
+                     style={{ backgroundImage: `url(${props.backgroundImage})`}}>
+                </div>
             </div>
             <div className="history-card-left">
-                <h2>Gatinha Nina</h2>
-                <p>Nina chegou tímida e assustada, mas logo se tornou carinhosa e brincalhona. Agora, é a dona do sofá e adora se esquentar ao sol, trazendo alegria e aconchego ao nosso lar com seu ronronar tranquilizador. Adotar a Nina foi como ganhar uma amiga fiel e especial. </p>
-                {isAdmin && (
+                <h2>{props.name}</h2>
+                <p>{props.description}</p>
+                {props.isAdmin && (
                     <div className="button-adoption-history-wrapper">
-                        <button onClick={handleOpenModel} className="button-adoption-history" type="button">Remover</button>
+                        <button onClick={props.handleOpenModel} className="button-adoption-history" type="button">Remover</button>
                         <button className="button-adoption-history" type="button">Editar</button>
                     </div>
                 )}

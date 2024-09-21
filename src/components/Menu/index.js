@@ -29,10 +29,10 @@ export default function Menu() {
                 <a>
                     <li>Quem somos</li>
                 </a>
-                <a>
+                <a href="/animalList" >
                     <li>Adoção</li>
                 </a>
-                <a>
+                <a href="/adoptionHistory">
                     <li>Relatos</li>
                 </a>
                 <a>
