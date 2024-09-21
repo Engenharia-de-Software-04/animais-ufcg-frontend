@@ -42,7 +42,7 @@ export default function Register() {
         
         try {
             const res = await postAdmin({ nome: form.nome.value, email: form.email.value, password: password });
-            if (res.status === 200) {
+            if (res && res.status === 200) {
                 router.push('/admin/login');
             } else {
                 console.error('Erro ao registrar o administrador');
