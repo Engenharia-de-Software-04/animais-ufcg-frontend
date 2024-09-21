@@ -23,7 +23,7 @@ export default function Register() {
         try {
             const res = await postAdmin(formData);
             console.log(res);
-            if (res.status === 200) {
+            if (res && res.status === 200) {
                 // Redireciona para a página de login se a resposta for ok
                 router.push('/admin/login');
             } else {
