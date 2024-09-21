@@ -16,42 +16,42 @@ export default function Register() {
     const router = useRouter();
     const [error, setError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const [serverError, setServerError] = useState('');
+    const [emailError, setEmailError] = useState(''); 
 
     const handlePostAdmin = async (event) => {
         event.preventDefault();
 
-        const form = event.target;
-        const formData = new FormData(form);
-
-        const password = formData.get('password');
-        const password1 = formData.get('password1');
+        const form = event.target.elements;
+        const password = form.password.value;
+        const password1 = form.password1.value;
 
         if (password.length <= 8) {
-            setPasswordError('A senha deve ter no mínimo 8 digitos');
+            setPasswordError('A senha deve ter no mínimo 8 dígitos');
             return;
         }
 
         if (password !== password1) {
             setError('As senhas não coincidem');
-            setPasswordError('');
             return;
         }
-
         setError(''); 
         setPasswordError(''); 
+        setServerError(''); 
+        setEmailError(''); 
+        
         try {
-            const res = await postAdmin(formData);
-            console.log(res);
+            const res = await postAdmin({ nome: form.nome.value, email: form.email.value, password: password });
             if (res.status === 200) {
                 router.push('/admin/login');
             } else {
                 console.error('Erro ao registrar o administrador');
             }
         } catch (error) {
-            console.error('Erro ao fazer a solicitação', error);
+            setServerError('Email inválido');
         }
     };
-   
+
     return (
         <div className="form-wrapper">
             <Flex
@@ -101,7 +101,7 @@ export default function Register() {
                                     name='email'
                                     placeholder='Email'
                                     required
-                                    border="1px solid"
+                                    border={`1px solid ${emailError || serverError ? 'red' : 'gray'}`}
                                     bg="white"
                                     borderRadius="25px"  
                                     height={50}
@@ -113,7 +113,7 @@ export default function Register() {
                                     name='password'
                                     placeholder='Senha'
                                     required
-                                    border={`1px solid ${error || passwordError ? 'red' : 'gray'}`} // Bordas condicionais
+                                    border={`1px solid ${error || passwordError ? 'red' : 'gray'}`}
                                     bg="white"
                                     borderRadius="25px"  
                                     height={50}
@@ -125,15 +125,15 @@ export default function Register() {
                                     name='password1'
                                     placeholder='Confirme a senha'
                                     required
-                                    border={`1px solid ${error || passwordError ? 'red' : 'gray'}`} // Bordas condicionais
+                                    border={`1px solid ${error || passwordError ? 'red' : 'gray'}`}
                                     bg="white"
                                     borderRadius="25px"  
                                     height={50}
                                     minWidth={250}
                                 />
-                                {(error || passwordError) && (
+                                {(error || passwordError || serverError || emailError) && (
                                     <Text color="red.500" mb="1rem">
-                                        {error || passwordError}
+                                        {error || passwordError || serverError}
                                     </Text>
                                 )}
                                 <Button 
