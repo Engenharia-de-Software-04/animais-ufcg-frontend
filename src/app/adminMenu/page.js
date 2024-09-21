@@ -2,6 +2,7 @@
 import "./styles.css";
 import Menu from '@/components/Menu';
 import ButtonMenu from "@/components/ButtonMenu/ButtonMenu";
+import Link from "next/link";
 
 
 export default function adminMenu() {
@@ -21,32 +22,37 @@ export default function adminMenu() {
                     </>}
                 />
 
-                <ButtonMenu
-                    color={"#4998FC"}
-                    text={<>
-                        Cadastrar
-                        <br />
-                        Relato
-                    </>}
-                />
-
-                <ButtonMenu
-                    color={"#FFB223"}
-                    text={<>
-                        Listar Animais
-                        <br />
-                        Cadastrados
-                </>}
+                <Link href="/registerAdoptionHistory" >
+                    <ButtonMenu
+                        color={"#4998FC"}
+                        text={<>
+                            Cadastrar
+                            <br />
+                            Relato
+                        </>}
                     />
+                </Link>
 
-                <ButtonMenu
-                    color={"#FC7C49"}
-                    text={<>
-                        Listar
-                        <br />
-                        Relatos
-                    </>}
-                />
+                <Link href="/animalList" >
+                    <ButtonMenu
+                        color={"#FFB223"}
+                        text={<>
+                            Listar Animais
+                            <br />
+                            Cadastrados</>}
+                    />
+                </Link>
+
+                <Link href="/adoptionHistory" >
+                    <ButtonMenu
+                        color={"#FC7C49"}
+                        text={<>
+                            Listar
+                            <br />
+                            Relatos
+                        </>}
+                    />
+                </Link>
             </div>
         </div>
     );
