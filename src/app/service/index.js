@@ -22,3 +22,12 @@ export const postAdoptionHistory = async (adoptionHistory) => {
     return res
 }
 
+export const getAllAdoptionHistories = async () => {
+    const res = await api.get(`/adoption_report/getAll`)
+    return res
+}
+
+export const getAnimalByID = async (id) => {
+    const res = await api.get(`/animal/${id}`)
+    return res
+}

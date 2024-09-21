@@ -57,9 +57,6 @@ export default function AnimalList() {
         );
         setModalOpen(false);
         setAnimalToRemove(null);
-
-
-
     };
 
     const handleOpenModal = (id) => {
