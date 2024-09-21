@@ -15,6 +15,10 @@ api.interceptors.request.use(async (request) => {
     }
     return request;
   });
+
+const handleError = (e) => {
+    console.log(e.message)
+}
   
 api.interceptors.response.use(
     (response) => {
@@ -26,6 +30,8 @@ api.interceptors.response.use(
 );
 
 export const postAdmin = async (formData) => {
+    console.log(API_BASE_URL)
+    console.log("/auth/register")
     const res = await api.post(`/auth/register`, formData)
     return res
 }
