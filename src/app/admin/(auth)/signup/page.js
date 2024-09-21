@@ -40,15 +40,11 @@ export default function Register() {
         setServerError(''); 
         setEmailError(''); 
         
-        try {
-            const res = await postAdmin({ nome: form.nome.value, email: form.email.value, password: password });
-            if (res && res.status === 200) {
-                router.push('/admin/login');
-            } else {
-                console.error('Erro ao registrar o administrador');
-            }
-        } catch (error) {
-            setServerError('Email inválido');
+        const res = await postAdmin({ name: form.nome.value, email: form.email.value, password: password });
+        if (res && res.status === 200) {
+            router.push('/admin/login');
+        } else if (res.status === 400) {
+            setServerError(res.data || "Parâmetros inválidos")
         }
     };
 
