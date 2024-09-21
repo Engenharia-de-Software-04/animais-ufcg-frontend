@@ -1,0 +1,33 @@
+.generic-textarea::placeholder {
+    opacity: 0.8;
+}
+
+.generic-textarea::placeholder, .generic-textarea {
+    color: #3A2719;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.generic-textarea {
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background-color: #f3f3f3;
+    color: #3A2719;
+}
+
+@media (max-width: 600px) {
+    .generic-textarea {
+        width: 400px;
+    }
+}
+
+@media (max-width: 400px) {
+    .generic-textarea {
+        width: 280px;
+    }
+}
+
+
