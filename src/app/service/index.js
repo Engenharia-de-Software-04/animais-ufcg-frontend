@@ -21,3 +21,4 @@ export const postAdoptionHistory = async (adoptionHistory) => {
     const res = await api.post(`/adoption_report/create`, adoptionHistory)
     return res
 }
+
