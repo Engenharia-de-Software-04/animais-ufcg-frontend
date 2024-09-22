@@ -7,9 +7,11 @@ import InputAnimalsPicture from "@/components/InputAnimalsPicture";
 import { postAdoptionHistory } from "../service";
 import { useState } from "react";
 import { Text } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 export default function RegisterAdoptionHistory() {
     const [error, setError] = useState('');
+    const router = useRouter()
 
     const handlePostAdoptionHistory = async (event) => {
         event.preventDefault();
@@ -34,7 +36,7 @@ export default function RegisterAdoptionHistory() {
         
                     try {
                         const res = await postAdoptionHistory(formData);
-                        form.reset()
+                        router.push("/adoptionHistoryAdmin")
                         setError("")
                     } catch (error) {
                         setError("Dados inválidos")

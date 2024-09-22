@@ -34,8 +34,10 @@ export default function AnimalList() {
 
                     return a;
                 });
+
+                const filtredAnimals = animals.filter(animal => animal.statusAnimal == "AVAILABLE")
                 
-                setAnimalsList(animals);
+                setAnimalsList(filtredAnimals);
             } catch (error) {
                 console.error("Erro ao buscar animais:", error);
             }

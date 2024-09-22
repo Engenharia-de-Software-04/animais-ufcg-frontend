@@ -8,12 +8,14 @@ import { useEffect, useState } from "react";
 import { deleteAdoptionHistory, getAllAdoptionHistories, getAnimalByID } from "../service";
 import { useSession } from "next-auth/react";
 import ConfirmBox from "@/components/ConfirmBox/ConfirmBox";
+import { useRouter } from "next/navigation";
 
 export default function AdoptionHistory() {
     const [adoptionHistoryList, setAdoptionHistoryList] = useState([]);
     const [adoptionHistoryToRemove, setAdoptionHistoryToRemove] = useState(null);
     const [isModalOpen, setModalOpen] = useState(false);
     const { data: session } = useSession();
+    const router = useRouter();
 
     const handleRemove = () => {
         const callDeleteAdoptionHistory = async () => {
@@ -38,6 +40,10 @@ export default function AdoptionHistory() {
     const handleOpenModal = (id) => {
         setAdoptionHistoryToRemove(id);
         setModalOpen(true);
+    }
+
+    const handleEdit = (id) => {
+        router.push(`/editAdoptionHistory?id=${id}`)
     }
 
     useEffect(() => {
@@ -91,6 +97,7 @@ export default function AdoptionHistory() {
                         isAdmin={!!session}
                         handleOpenModel={handleOpenModal}
                         onRemove={() => handleOpenModal(adoptionHistory.id)}
+                        onEdit={() => handleEdit(adoptionHistory.id)}
                     />
                 ))}
             </div>

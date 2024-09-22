@@ -1,8 +1,8 @@
 import "./styles.css";
 
-export default function FormSelect({ name, defaultValue, options }) {
+export default function FormSelect({ onChange, name, defaultValue, options }) {
   return (
-    <select name={name} defaultValue={defaultValue} className="generic-select">
+    <select onChange={onChange} name={name} defaultValue={defaultValue} className="generic-select">
       <option value={defaultValue} disabled>
         {defaultValue}
       </option>

@@ -44,7 +44,20 @@ export default function EditAnimal() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setAnimalData({ ...animalData, [name]: value });
+  
+    // Converte o valor para booleano se necessário
+    let updatedValue = value;
+  
+    if (name === 'animalIsCastrated') {
+      updatedValue = value === "Castrado";
+    } else if (name === 'animalIsVaccinated') {
+      updatedValue = value === "Vacinado";
+    }
+  
+    setAnimalData((prevData) => ({
+      ...prevData,
+      [name]: updatedValue,
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -66,6 +79,7 @@ export default function EditAnimal() {
 
         try {
             // Aqui você usa o estado atualizado
+            console.log({ ...animalData, photo: base64String })
             const res = await updateAnimal(id, { ...animalData, photo: base64String });
             router.push('/animalListAdmin'); // Redireciona para a lista após a edição
         } catch (err) {
@@ -103,21 +117,21 @@ export default function EditAnimal() {
           <FormSelect 
             className="form-select" 
             defaultValue={animalData.animalSex || "Sexo"} 
-            options={["Macho", "Fêmea"]} 
+            options={["MALE", "FEMALE"]} 
             name="animalSex"
             onChange={handleInputChange}
           />
           <FormSelect 
             className="form-select" 
             defaultValue={animalData.animalSpecie || "Tipo"} 
-            options={["Gato", "Cachorro", "Outro"]} 
+            options={["CAT", "DOG", "OTHER"]} 
             name="animalSpecie"
             onChange={handleInputChange}
           />
           <FormSelect 
             className="form-select" 
             defaultValue={animalData.animalAge || "Estágio da vida"} 
-            options={["Filhote", "Adulto", "Idoso"]} 
+            options={["YOUNG", "ADULT", "SENIOR"]} 
             name="animalAge"
             onChange={handleInputChange}
           />

@@ -9,9 +9,11 @@ import InputAnimalsPicture from "@/components/InputAnimalsPicture";
 import { useState } from "react";
 import { postAnimal } from "../service";
 import { Text } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 export default function AnimalProfileAdmin(){
     const [error, setError] = useState('');
+    const router = useRouter()
 
     const handlePostAnimal = async (event) => {
         event.preventDefault();
@@ -36,7 +38,7 @@ export default function AnimalProfileAdmin(){
             
                 try {
                     const res = await postAnimal(formData); // Faz o post
-                    form.reset(); // Limpa o formulário após o envio
+                    router.push("/animalListAdmin")
                     setError(""); // Limpa qualquer erro
                 } catch (error) {
                     setError("Dados inválidos ou erro no servidor");
