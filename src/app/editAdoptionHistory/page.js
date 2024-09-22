@@ -69,7 +69,7 @@ export default function EditAdoptionHistory() {
                 console.log({ ...adoptionHistory, photo: base64String, animalID: animalID })
                 if (currentAnimal.length != 0) {
                     const res = await updateAdoptionHistory(id, { ...adoptionHistory, photo: base64String, animalID: currentAnimal[0].id });
-                    router.push('/adoptionHistory'); // Redireciona para a lista após a edição
+                    router.push('/adoptionHistoryAdmin'); // Redireciona para a lista após a edição
                 } else {
                     setError('Animal não existente no sistema');
                 }
