@@ -23,7 +23,7 @@ export default function Login() {
         });
 
         if (result.status === 200) {
-            router.push("/admin");
+            router.push("/adminMenu");
         } else if (result.status === 401) {
             setError('Email ou senha incorreto, tente novamente');
         }

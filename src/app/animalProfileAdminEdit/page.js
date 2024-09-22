@@ -67,7 +67,7 @@ export default function EditAnimal() {
         try {
             // Aqui você usa o estado atualizado
             const res = await updateAnimal(id, { ...animalData, photo: base64String });
-            router.push('/animalList'); // Redireciona para a lista após a edição
+            router.push('/animalListAdmin'); // Redireciona para a lista após a edição
         } catch (err) {
             console.log(err);
             setError('Erro ao atualizar os dados do animal.');
