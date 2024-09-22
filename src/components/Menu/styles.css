@@ -122,11 +122,12 @@
 }
 
 .responsive-help-nav li{
+    cursor: pointer;
     display: inline-block;
     background-color: #FFB210;
     color: #fff;
     border-radius: 50px;
-    padding: 15px 30px;;
+    padding: 15px 30px;
     font-size: 15px;
     cursor: pointer;
     margin-left: 40px;

@@ -10,7 +10,7 @@ import { useState } from "react";
 import { postAnimal } from "../service";
 import { Text } from "@chakra-ui/react";
 
-export default function animalProfileAdmin(){
+export default function AnimalProfileAdmin(){
     const [error, setError] = useState('');
 
     const handlePostAnimal = async (event) => {
