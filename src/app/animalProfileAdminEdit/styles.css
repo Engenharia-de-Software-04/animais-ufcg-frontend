@@ -1,0 +1,109 @@
+.page-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3A2719;
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/*Entire form */
+
+.top-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.center-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+
+}
+
+/* FormInput */
+
+.form-input {
+    flex-basis: 30%;
+}
+
+@media (max-width: 768px) {
+    .form-input {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-input {
+        flex-basis: 100%;
+    }
+}
+
+/* FormSelect*/
+
+.form-select {
+    flex-basis: 30%;
+
+}
+
+@media (max-width: 768px) {
+    .form-select {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-select {
+        flex-basis: 100%;
+    }
+}
+
+/* Text Area */
+
+.text-area-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+}
+
+.text-area {
+    flex-basis: 70%;
+    flex-shrink: 1;
+    flex-grow: 0;
+
+}
+
+@media (max-width: 768px) {
+    .text-area {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-area {
+        flex-basis: 100%;
+    }
+}
+
+/* Form Button */
+
+.button-save {
+    background-color: #FFB210;
+    color: white;
+    border-radius: 20px;
+    height: 55px;
+    width: 250px;
+}
