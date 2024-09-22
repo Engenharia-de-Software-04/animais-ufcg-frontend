@@ -41,3 +41,8 @@ export const postAnimal = async (formData) => {
     const res = await api.post(`/animal/create`, formData)
     return res
 }
+
+export const updateAnimal = async (id, formData) => {
+    const res = await api.put(`/animal/update/${id}`, formData)
+    return res
+}
