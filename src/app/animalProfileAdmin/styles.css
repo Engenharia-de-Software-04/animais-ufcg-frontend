@@ -21,53 +21,14 @@
 .center-form {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    /* flex-wrap: wrap; */
+    justify-content: center;
     gap: 20px;
     padding: 20px;
     width: 100%;
-
+    flex-wrap: wrap;
 }
 
-/* FormInput */
-
-.form-input{
-    flex-basis: 30%;
-}
-
-@media (max-width: 768px) {
-    .form-input {
-        flex-basis: 45%;
-    }
-}
-
-@media (max-width: 480px) {
-    .form-input {
-        flex-basis: 100%;
-    }
-}
-
-/* FormSelect*/
-
-.form-select {
-    flex-basis: 30%;
-
-}
-
-@media (max-width: 768px) {
-    .form-select {
-        flex-basis: 45%;
-    }
-}
-
-@media (max-width: 480px) {
-    .form-select {
-        flex-basis: 100%;
-    }
-}
-
-/* Text Area */
 
 .text-area-container {
     display: flex;
@@ -79,27 +40,6 @@
     width: 100%;
 }
 
-.text-area {
-    flex-basis: 70%;
-    flex-shrink: 1;
-    flex-grow: 0;
-    
-}
-
-@media (max-width: 768px) {
-    .text-area {
-        flex-basis: 45%;
-    }
-}
-
-@media (max-width: 480px) {
-    .text-area {
-        flex-basis: 100%;
-    }
-}
-
-/* Form Button */
-
 .button-save {
     background-color: #FFB210;
     color: white;
@@ -107,3 +47,39 @@
     height: 55px;
     width: 250px;
 }
+
+@media (max-width: 1000px) {
+    .text-area {
+        width: 600px !important; 
+    }
+}
+
+@media (max-width: 630px) {
+    .text-area {
+        width: 400px !important; 
+    }
+
+    .generic-input {
+        width: 300px !important;
+    }
+
+    .generic-select {
+        width: 300px !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .text-area {
+        width: 300px !important; 
+    }
+
+    .generic-input {
+        width: 200px !important;
+    }
+
+    .generic-select {
+        width: 200px !important;
+    }
+}
+
+

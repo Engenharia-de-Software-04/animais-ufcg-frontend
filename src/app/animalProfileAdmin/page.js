@@ -16,8 +16,8 @@ export default function animalProfileAdmin(){
         <form className="top-form">
             <InputAnimalsPicture/>
             <div className="center-form">
-                <FormInput className ="form-input" placeholder="Nome" contentEditable={false} />
-                <FormInput className ="form-input" placeholder="Raça" sizeInput="small"/>
+                <FormInput className="form-input" placeholder="Nome" contentEditable={false} />
+                <FormInput className="form-input" placeholder="Raça" sizeInput="small"/>
                 <FormSelect className="form-select" defaultValue="Sexo" options={["Macho", "Fêmea"]}/>
                 <FormSelect className="form-select" defaultValue="Tipo" options={["Gato", "Cachorro", "Outro"]}/>
                 <FormSelect className="form-select" defaultValue="Estágio da vida" options={["Filhote", "Adulto", "Idoso"]}/>
