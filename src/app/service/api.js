@@ -17,6 +17,10 @@ api.interceptors.request.use(async (request) => {
     return request;
 });
 
+const handleError = (e) => {
+    return e.message
+}
+
 // Interceptor para tratar erros
 api.interceptors.response.use(
     (response) => {

@@ -5,10 +5,40 @@ import Menu from '@/components/Menu';
 import HistoryCard from "@/components/HistoryCard";
 import Animals from "@/components/Animals";
 import { useEffect, useState } from "react";
-import { getAllAdoptionHistories, getAnimalByID } from "../service";
+import { deleteAdoptionHistory, getAllAdoptionHistories, getAnimalByID } from "../service";
+import { useSession } from "next-auth/react";
+import ConfirmBox from "@/components/ConfirmBox/ConfirmBox";
 
 export default function AdoptionHistory() {
     const [adoptionHistoryList, setAdoptionHistoryList] = useState([]);
+    const [adoptionHistoryToRemove, setAdoptionHistoryToRemove] = useState(null);
+    const [isModalOpen, setModalOpen] = useState(false);
+    const { data: session } = useSession();
+
+    const handleRemove = () => {
+        const callDeleteAdoptionHistory = async () => {
+            try {
+                const resposta = await deleteAdoptionHistory(adoptionHistoryToRemove);
+            } catch (error) {
+                console.error("Erro ao deletar o relato de adoção:", error);
+            }
+        };
+        callDeleteAdoptionHistory();
+
+        setAdoptionHistoryList((prevAdoptionHistory) =>
+            prevAdoptionHistory.filter((adoptionHistory) => adoptionHistory.id !== adoptionHistoryToRemove)
+        );
+        setModalOpen(false);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+    };
+
+    const handleOpenModal = (id) => {
+        setAdoptionHistoryToRemove(id);
+        setModalOpen(true);
+    }
 
     useEffect(() => {
         const fetchAdoptionHistory = async () => {
@@ -58,9 +88,18 @@ export default function AdoptionHistory() {
                         name={adoptionHistory.name}
                         backgroundImage={adoptionHistory.photo}
                         description={adoptionHistory.adoptionReport}
+                        isAdmin={!!session}
+                        handleOpenModel={handleOpenModal}
+                        onRemove={() => handleOpenModal(adoptionHistory.id)}
                     />
                 ))}
             </div>
         </div>
+        <ConfirmBox
+            isOpen={isModalOpen} 
+            onClose={handleCloseModal} 
+            onConfirm={handleRemove} 
+            message="Você tem certeza que deseja remover o cadastro do animal?" 
+        />
     </div>;
 }

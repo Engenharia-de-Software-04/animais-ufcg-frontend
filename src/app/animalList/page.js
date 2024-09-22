@@ -7,12 +7,16 @@ import ConfirmBox from "@/components/ConfirmBox/ConfirmBox";
 import Animals from "@/components/Animals"
 import { getAllAnimals } from "../service/index";
 import { useSession } from "next-auth/react";
+import { deleteAnimal, getAllAnimals, getAnimalByID } from "../service/index";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function AnimalList() {
     const { data: session } = useSession();
     const [animalsList, setAnimalsList] = useState([]);
     const [isModalOpen, setModalOpen] = useState(false);
     const [animalToRemove, setAnimalToRemove] = useState(null);
+    const router = useRouter()
 
     useEffect(() => {
         const fetchAnimals = async () => {
@@ -44,7 +48,20 @@ export default function AnimalList() {
         fetchAnimals();
     }, []);
 
+    const handleEditAnimal = (id) => {
+        router.push(`/animalProfileAdminEdit?id=${id}`);
+    }
+
     const handleRemove = () => {
+        const callDeleteAnimal = async () => {
+            try {
+                const resposta = await deleteAnimal(animalToRemove);
+            } catch (error) {
+                console.error("Erro ao buscar animais:", error);
+            }
+        };
+        callDeleteAnimal();
+
         setAnimalsList((prevAnimais) =>
             prevAnimais.filter((animal) => animal.id !== animalToRemove)
         );
@@ -78,6 +95,7 @@ export default function AnimalList() {
                             status={animal.statusAnimal}
                             onRemove={() => handleOpenModal(animal.id)}
                             admin={session}
+                            onEdit={() => handleEditAnimal(animal.id)}
                         />
                     ))}
                     <ConfirmBox

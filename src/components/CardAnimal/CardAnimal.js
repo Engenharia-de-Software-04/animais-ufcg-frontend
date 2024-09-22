@@ -25,7 +25,7 @@ export default function CardAnimal(props) {
             </div>
             {props.admin ?
                 <div className="buttons">
-                    <button className="button">Editar</button>
+                    <button onClick={props.onEdit} className="button">Editar</button>
                     <button onClick={props.onRemove} className="button">Remover</button>
                 </div> 
             :
