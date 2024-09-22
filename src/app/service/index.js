@@ -46,3 +46,13 @@ export const updateAnimal = async (id, formData) => {
     const res = await api.put(`/animal/update/${id}`, formData)
     return res
 }
+
+export const getAdoptionHistoryByID = async (id) => {
+    const res = await api.get(`/adoption_report/get/${id}`)
+    return res
+}
+
+export const updateAdoptionHistory = async (id, formData) => {
+    const res = await api.put(`/adoption_report/update/${id}`, formData)
+    return res
+}
