@@ -1,9 +1,9 @@
 import "./styles.css";
 
-export default function TextArea({placeholder, name}) {
+export default function TextArea({value, placeholder, name, onChange}) {
     return(
         <div>
-            <textarea name={name} className="generic-textarea text-area" rows="1" cols="55" placeholder={placeholder}/>
+            <textarea onChange={onChange} value={value} name={name} className="generic-textarea text-area" rows="1" cols="55" placeholder={placeholder}/>
         </div>
     );
     

@@ -20,7 +20,7 @@ export default function CardAnimal(props) {
                 <p className="description">{props.description}</p>
             </div>
             <div className="buttons">
-                <button className="button">Editar</button>
+                <button onClick={props.onEdit} className="button">Editar</button>
                 <button onClick={props.onRemove} className="button">Remover</button>
             </div>
         </div>

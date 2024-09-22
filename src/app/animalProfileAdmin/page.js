@@ -23,15 +23,7 @@ export default function animalProfileAdmin(){
         formData.set("animalIsVaccinated", formData.get("animalIsVaccinated") == "Vacinado")
         
         const formObject = Object.fromEntries(formData.entries());
-        console.log(formObject)
 
-        // Validação simples
-        // if (!formObject.animalName || !formObject.statusAnimal || !formObject.animalSpecie || !fileInput) {
-        //     setError("Os campos obrigatórios não podem estar vazios");
-        //     return;
-        // }
-
-        
         if (fileInput && fileInput instanceof File) {
             const reader = new FileReader();
             
@@ -62,52 +54,6 @@ export default function animalProfileAdmin(){
             setError("Nenhum arquivo encontrado");
         }
     };
-
-    // const handlePostAnimal = async (event) => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const formData = new FormData(form);
-    //     const fileInput = formData.get('photo');
-
-    //     const formObject = Object.fromEntries(formData.entries());
-    //     console.log(formObject);
-
-    //     // if (formData.get("statusAnimal") == "" ||
-    //     //     formData.get("animalID") == "" ||
-    //     //     formData.get("adoptionReport") == "" ||
-    //     //     formData.get("photo") == "") {
-    //     //         setError("Os atributos não podem ser vazios")
-    //     // } else {
-    //     if (fileInput && fileInput instanceof File) {
-    //         const reader = new FileReader();
-            
-    //         reader.onload = async () => {
-    //             const base64String = reader.result.split(',')[1];
-                
-    //             formData.set('photo', base64String);
-
-    //             try {
-    //                 const res = await postAnimal(formData);
-    //                 // form.reset()
-    //                 setError("")
-    //             } catch (error) {
-    //                 setError("Dados inválidos")
-    //             }
-    //         };
-            
-    //         reader.onerror = (error) => {
-    //             console.error('Erro ao ler o arquivo:', error);
-    //             setError("Erro ao ler o arquivo")
-    //         };
-            
-    //         reader.readAsDataURL(fileInput);
-    //     } else {
-    //         console.error('Nenhum arquivo encontrado.');
-    //         setError("Nenhum arquivo encontrado")
-    //     }
-    //     // }
-    // }
-
 
     return ( 
     <div>

@@ -5,12 +5,14 @@ import Menu from "@/components/Menu";
 import "./styles.css";
 import ConfirmBox from "@/components/ConfirmBox/ConfirmBox";
 import Animals from "@/components/Animals"
-import { deleteAnimal, getAllAnimals } from "../service/index";
+import { deleteAnimal, getAllAnimals, getAnimalByID } from "../service/index";
+import { useRouter } from "next/navigation";
 
 export default function AnimalList() {
     const [animalsList, setAnimalsList] = useState([]);
     const [isModalOpen, setModalOpen] = useState(false);
     const [animalToRemove, setAnimalToRemove] = useState(null);
+    const router = useRouter()
 
     useEffect(() => {
         const fetchAnimals = async () => {
@@ -41,6 +43,10 @@ export default function AnimalList() {
 
         fetchAnimals();
     }, []);
+
+    const handleEditAnimal = (id) => {
+        router.push(`/animalProfileAdminEdit?id=${id}`);
+    }
 
     const handleRemove = () => {
         const callDeleteAnimal = async () => {
@@ -84,6 +90,7 @@ export default function AnimalList() {
                             estagioDeVida={animal.animalAge}
                             status={animal.statusAnimal}
                             onRemove={() => handleOpenModal(animal.id)}
+                            onEdit={() => handleEditAnimal(animal.id)}
                         />
                     ))}
                     <ConfirmBox
