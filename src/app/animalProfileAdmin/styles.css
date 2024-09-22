@@ -41,6 +41,9 @@
 }
 
 .button-save {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
     background-color: #FFB210;
     color: white;
     border-radius: 20px;
