@@ -19,3 +19,22 @@
     width: 800px;
 }
 
+@media (max-width: 800px) {
+    .generic-textarea {
+        width: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .generic-textarea {
+        width: 400px;
+    }
+}
+
+@media (max-width: 400px) {
+    .generic-textarea {
+        width: 280px;
+    }
+}
+
+

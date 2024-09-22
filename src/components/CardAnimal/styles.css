@@ -67,10 +67,10 @@
     color: black;
     font-size: 1rem;
     text-align: justify;
+    min-height: 30px;
 }
 
 .description {
-    height: 100px;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
     display: -webkit-box;
@@ -80,7 +80,9 @@
     text-overflow: ellipsis;
     text-align: justify;
     font-size: 1rem;
+    min-height: 70px;
 }
+
 
 .button {
     border-radius: 8px;
@@ -101,4 +103,6 @@
     flex-direction: row;
     gap: 100px;
     margin-top: 5px;
+    justify-content: center;
 }
+

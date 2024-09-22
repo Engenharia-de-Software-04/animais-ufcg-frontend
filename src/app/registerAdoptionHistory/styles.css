@@ -1,0 +1,39 @@
+.register-adoption-history-title{
+    width: 100%;
+}
+
+.register-adoption-history-title h1{
+    color: #3A2719;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    opacity: 0.8;
+}
+
+.register-adoption-history-body{
+    display: flex;
+    justify-content: center;
+}
+
+.register-adoption-history-body form{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-adoption-history-body input, textarea, .input-animals-wrapper {
+    margin-bottom: 20px;
+}
+
+.register-adoption-history-body > form > button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #fff;
+    background-color: #FFB210;
+    padding: 10px 80px;
+    border-radius: 20px;
+}
