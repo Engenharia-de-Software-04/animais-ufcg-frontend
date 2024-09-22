@@ -12,7 +12,8 @@ export default function AnimalListAdmin() {
     const [animalsList, setAnimalsList] = useState([]);
     const [isModalOpen, setModalOpen] = useState(false);
     const [animalToRemove, setAnimalToRemove] = useState(null);
-    const router = useRouter()
+    const router = useRouter();
+    const { data: session } = useSession();
 
     useEffect(() => {
         const fetchAnimals = async () => {
@@ -91,6 +92,7 @@ export default function AnimalListAdmin() {
                             status={animal.statusAnimal}
                             onRemove={() => handleOpenModal(animal.id)}
                             onEdit={() => handleEditAnimal(animal.id)}
+                            admin={session}
                         />
                     ))}
                     <ConfirmBox

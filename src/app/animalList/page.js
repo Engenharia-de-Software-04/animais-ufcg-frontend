@@ -5,14 +5,10 @@ import Menu from "@/components/Menu";
 import "./styles.css";
 import ConfirmBox from "@/components/ConfirmBox/ConfirmBox";
 import Animals from "@/components/Animals"
-import { getAllAnimals } from "../service/index";
-import { useSession } from "next-auth/react";
 import { deleteAnimal, getAllAnimals, getAnimalByID } from "../service/index";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function AnimalList() {
-    const { data: session } = useSession();
     const [animalsList, setAnimalsList] = useState([]);
     const [isModalOpen, setModalOpen] = useState(false);
     const [animalToRemove, setAnimalToRemove] = useState(null);
@@ -74,10 +70,13 @@ export default function AnimalList() {
         setModalOpen(true);
     };
 
-
     const handleCloseModal = () => {
         setModalOpen(false);
     };
+
+    const handlewExpandView = (id) => {
+        router.push(`/viewAnimal?id=${id}`);
+    }
 
     return (
         <div className="page-container">
@@ -94,8 +93,9 @@ export default function AnimalList() {
                             estagioDeVida={animal.animalAge}
                             status={animal.statusAnimal}
                             onRemove={() => handleOpenModal(animal.id)}
-                            admin={session}
+                            admin={false}
                             onEdit={() => handleEditAnimal(animal.id)}
+                            onView={() => handlewExpandView(animal.id)}
                         />
                     ))}
                     <ConfirmBox
