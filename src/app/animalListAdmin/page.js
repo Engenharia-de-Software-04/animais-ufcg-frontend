@@ -7,6 +7,7 @@ import ConfirmBox from "@/components/ConfirmBox/ConfirmBox";
 import Animals from "@/components/Animals"
 import { deleteAnimal, getAllAnimals, getAnimalByID } from "../service/index";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function AnimalListAdmin() {
     const [animalsList, setAnimalsList] = useState([]);

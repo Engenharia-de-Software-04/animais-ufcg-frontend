@@ -11,6 +11,7 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
+    position: relative;
 }
 
 .animal-img-wrapper img {
@@ -25,7 +26,10 @@
 
 .view-header .content {
     flex-grow: 1;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .view-header .content h1 {
@@ -42,6 +46,7 @@
     border-radius: 50px;
     color: #fff;
     font-weight: bold;
+    max-width: 200px;
 }
 
 .view-body {

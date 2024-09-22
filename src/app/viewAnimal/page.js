@@ -4,7 +4,7 @@ import "./styles.css"
 import { getAnimalByID } from "../service";
 import Menu from "@/components/Menu";
 
-export default function viewAnimal() {
+export default function ViewAnimal() {
     const [animal, setAnimal] = useState([]);
     const [id, setId] = useState([]);
 

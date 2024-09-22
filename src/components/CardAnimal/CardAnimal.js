@@ -29,7 +29,7 @@ export default function CardAnimal(props) {
                     <button onClick={props.onRemove} className="button">Remover</button>
                 </div> 
             :
-                <button className="adoption-button"><span className="material-symbols-outlined">pets</span> Quero adotar</button>
+                <button onClick={props.onView} className="adoption-button"><span className="material-symbols-outlined">pets</span> Detalhes</button>
             }
         </div>
     );
