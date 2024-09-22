@@ -18,7 +18,7 @@ body {
     height: 100%;
     background-image: url('/images/background.svg') !important;
     background-size: cover !important;
-    background-repeat: no-repeat !important;
+    background-repeat: repeat !important;
     overflow-x: hidden;
     z-index: -1;
 }

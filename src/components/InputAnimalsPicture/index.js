@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import "./styles.css";
 
-export default function InputAnimalsPicture() {
+export default function InputAnimalsPicture({ name }) {
     const [imageSrc, setImageSrc] = useState("images/animals-input.png");
     const [textImage, setTextImage] = useState("Adicionar<br/>foto");
     const textImageRef = useRef(null);
@@ -37,7 +37,7 @@ export default function InputAnimalsPicture() {
         <div className="input-animals-wrapper">
             <img ref={imgRef} className="img-input-animals-main img-input-animals" src={imageSrc} alt="imagem de gato e cachorro dormindo abraçados"/>
             <div ref={inputWrapperRef} className="input-file-wrapper-main input-file-wrapper">
-                <input className="input-file"  type="file" onChange={handleFileChange}/>
+                <input name={name} className="input-file"  type="file" onChange={handleFileChange}/>
             </div>
             <p ref={textImageRef} className="input-animals-text input-animals-text-main" dangerouslySetInnerHTML={{ __html: textImage }}></p>
 
