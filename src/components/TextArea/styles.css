@@ -16,6 +16,13 @@
     border: 2px solid #000;
     background-color: #f3f3f3;
     color: #3A2719;
+    width: 800px;
+}
+
+@media (max-width: 800px) {
+    .generic-textarea {
+        width: 600px;
+    }
 }
 
 @media (max-width: 600px) {

@@ -7,6 +7,4 @@ export default function FormInput({placeholder, contentEditable, sizeInput, name
             <input type="text" name={name} className={`generic-input input-${sizeInput}`} placeholder={placeholder} contentEditable={contentEditable}/>
         </div>
     );
-    
-
 }

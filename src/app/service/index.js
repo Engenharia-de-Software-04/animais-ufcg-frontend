@@ -36,3 +36,8 @@ export const deleteAdoptionHistory = async (id) => {
     const res = await api.delete(`/adoption_report/${id}`)
     return res
 }
+
+export const postAnimal = async (formData) => {
+    const res = await api.post(`/animal/create`, formData)
+    return res
+}
