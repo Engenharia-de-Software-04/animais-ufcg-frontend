@@ -18,14 +18,7 @@ body {
     height: 100%;
     background-image: url('/images/background.svg') !important;
     background-size: cover !important;
-    background-repeat: no-repeat !important;
+    background-repeat: repeat !important;
     overflow-x: hidden;
     z-index: -1;
-}
-
-.body-bg{
-    width: 100%;
-    height: 100% !important;
-    background-color: #fff;
-    z-index: 1;
 }
