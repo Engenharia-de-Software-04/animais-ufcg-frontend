@@ -19,3 +19,14 @@
     width: 400px;
 }
 
+@media (max-width: 600px) {
+    .generic-input {
+        width: 250px;
+    }
+}
+
+@media (max-width: 400px) {
+    .generic-input {
+        width: 200px;
+    }
+}

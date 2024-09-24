@@ -29,13 +29,13 @@ export default function Menu() {
                 <a>
                     <li>Quem somos</li>
                 </a>
-                <a>
+                <a href="/animalList" >
                     <li>Adoção</li>
                 </a>
-                <a>
+                <a href="/adoptionHistory">
                     <li>Relatos</li>
                 </a>
-                <a>
+                <a href="https://www.instagram.com/animaisufcg/">
                     <li>Contato</li>
                 </a>
             </ul>
@@ -56,13 +56,13 @@ export default function Menu() {
                     <a>
                         <li><span className="material-symbols-outlined">forum</span> Quem somos</li>
                     </a>
-                    <a>
+                    <a href="/animalList">
                         <li><span className="material-symbols-outlined">pets</span> Adoção</li>
                     </a>
-                    <a>
+                    <a href="/adoptionHistory">
                         <li><span className="material-symbols-outlined">import_contacts</span> Relatos</li>
                     </a>
-                    <a>
+                    <a href="https://www.instagram.com/animaisufcg/">
                         <li><span className="material-symbols-outlined">call</span> Contato</li>
                     </a>
                 </ul>

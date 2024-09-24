@@ -19,7 +19,7 @@
 }
 
 .tags-container {
-    top: 0;
+    top: 5px;
     width: 100%;
     display: flex;
     gap: 120px;
@@ -33,7 +33,7 @@
     height: 20px;
     font-size: 16px;
     align-items: center;
-    background-color: #FFB210;
+    background-color: #21C313;
     color: white;
     display: flex;
     justify-content: center;
@@ -41,13 +41,13 @@
     font-weight: 700;
 }
 
-.available{
-    background-color: #21C313;
+.available {
+    background-color: #DC3545;
     width: 100px;
 }
 
 .adopted{
-    background-color: #DC3545;
+    background-color: #FFB210;
 }
 
 
@@ -67,10 +67,10 @@
     color: black;
     font-size: 1rem;
     text-align: justify;
+    min-height: 30px;
 }
 
 .description {
-    height: 100px;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
     display: -webkit-box;
@@ -80,7 +80,9 @@
     text-overflow: ellipsis;
     text-align: justify;
     font-size: 1rem;
+    min-height: 70px;
 }
+
 
 .button {
     border-radius: 8px;
@@ -101,4 +103,26 @@
     flex-direction: row;
     gap: 100px;
     margin-top: 5px;
+    justify-content: center;
+}
+
+.adoption-button {
+    width: 80%;
+    background-color: #FFB210;
+    border-radius: 8px;
+    color: #fff;
+    margin-bottom: 20px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    position: relative;
+    padding: 5px 0px;
+}
+
+.adoption-button span {
+    margin-right: 10px;
 }
