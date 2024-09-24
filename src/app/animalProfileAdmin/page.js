@@ -7,7 +7,7 @@ import FormSelect from "@/components/FormSelect/FormSelect";
 import TextArea from "@/components/TextArea";
 import InputAnimalsPicture from "@/components/InputAnimalsPicture";
 
-export default function animalProfileAdmin(){
+export default function AnimalProfileAdmin(){
 
     return( 
     <div>
