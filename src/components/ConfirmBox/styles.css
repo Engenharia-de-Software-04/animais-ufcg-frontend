@@ -25,7 +25,7 @@
     width: 100%;
 }
 
-button {
+.overlay button {
     height: 40px;
     width: 120px;
     cursor: pointer;
