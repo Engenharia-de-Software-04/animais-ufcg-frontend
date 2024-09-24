@@ -127,15 +127,12 @@
     left: 24px;
 }
 
-
-
 .box-1 ul {
     width: 100%;
     font-size: 12px;
     font-weight: 800;
     font-family: "Roboto", sans-serif;
     margin-left: 15%;
-    list-style-type: disc !important;
 }
 
 
@@ -165,8 +162,10 @@
     font-size: 12px;
     font-weight: 800;
     font-family: "Roboto", sans-serif;
-    list-style-type: disc;
+}
 
+.box-1 ul li, .box-2 ul li {
+    list-style: disc;
 }
 
 .container-collection-point-image {
