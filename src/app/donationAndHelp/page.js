@@ -42,11 +42,6 @@ export default function DonationAndHelp(){
                         </div>
                     </div>
                     <div className="container-major-2">
-                        <div className="box-2">
-                            <ul>
-                                <li>Secretaria do CEEI (UFCG- campus sede)</li> 
-                            </ul>
-                        </div>
                         <div className="container-collection-point-image"> 
                             <div className="image-wrapper-2">
                                 <img src="/images/building.png"/>
@@ -54,6 +49,11 @@ export default function DonationAndHelp(){
                             <div className="small-box-2">
                                 <h3>Pontos de Coleta</h3>
                             </div>
+                        </div>
+                        <div className="box-2">
+                            <ul>
+                                <li>Secretaria do CEEI (UFCG- campus sede)</li> 
+                            </ul>
                         </div>
                     </div>
                 </section>
