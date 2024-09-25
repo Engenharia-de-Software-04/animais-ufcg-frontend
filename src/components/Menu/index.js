@@ -23,7 +23,9 @@ export default function Menu() {
 
   return <div>
     <div className="menu-wrapper">
-        <div className="logo"></div>
+        <a href="/">
+            <div className="logo"></div>
+        </a>
         <nav className="main-nav">
             <ul className="nav-wrapper">
                 <a>
@@ -41,7 +43,7 @@ export default function Menu() {
             </ul>
         </nav>
         <nav className="help-nav">
-            <a>
+            <a href="/donationAndHelp">
                 <li>Ajuda</li>
             </a>
         </nav>
@@ -68,7 +70,7 @@ export default function Menu() {
                 </ul>
             </nav>
             <nav className="responsive-help-nav">
-                <a>
+                <a href="/donationAndHelp">
                     <li>Ajuda</li>
                 </a>
             </nav>

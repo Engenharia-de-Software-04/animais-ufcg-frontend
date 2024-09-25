@@ -1,6 +1,6 @@
 .history-card {
     position: relative;
-    height: 300px;
+    min-height: 300px;
     width: 100%;
     margin: 40px 0px;
     padding: 30px 70px;
@@ -93,7 +93,7 @@
     }
 
     .history-card-right{
-        height: 160px;
+        min-height: 160px;
         min-width: 160px;
         color: #3A2719;
         display: flex;
@@ -108,7 +108,7 @@
 
 @media (max-width: 840px) {
     .history-card {
-        height: 450px;
+        min-height: 450px;
         flex-direction: column !important;
         align-items: center;
         padding: 30px 10px;
@@ -135,7 +135,7 @@
 
 @media (max-width: 500px) {
     .history-card {
-        height: 570px;
+        min-height: 570px;
         flex-direction: column;
         align-items: center;
         padding: 30px 10px;

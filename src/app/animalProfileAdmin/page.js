@@ -41,6 +41,7 @@ export default function AnimalProfileAdmin(){
                     router.push("/animalListAdmin")
                     setError(""); // Limpa qualquer erro
                 } catch (error) {
+                    console.log(error)
                     setError("Dados inválidos ou erro no servidor");
                 }
             };
