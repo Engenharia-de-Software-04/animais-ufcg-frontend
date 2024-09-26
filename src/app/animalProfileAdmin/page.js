@@ -45,7 +45,7 @@ export default function AnimalProfileAdmin(){
         }
 
         if (formData.get("animalAge") == 'FILHOTE'){
-            formData.set("animalSpanimalAgeecie", 'YOUNG')
+            formData.set("animalAge", 'YOUNG')
         } else if (formData.get("animalAge") == 'ADULTO'){
             formData.set("animalAge", 'ADULT')
         } else {
