@@ -5,7 +5,7 @@ import Menu from "@/components/Menu";
 import "./styles.css";
 import ConfirmBox from "@/components/ConfirmBox/ConfirmBox";
 import Animals from "@/components/Animals"
-import { deleteAnimal, getAllAnimals, getAnimalByID } from "../service/index";
+import { deleteAnimal, getAllAvailable} from "../service/index";
 import { useRouter } from "next/navigation";
 
 export default function AnimalList() {
@@ -17,7 +17,7 @@ export default function AnimalList() {
     useEffect(() => {
         const fetchAnimals = async () => {
             try {
-                const resposta = await getAllAnimals();
+                const resposta = await getAllAvailable();
                 
                 const animals = resposta.data.map(a => {
                     if (a.photo) {    
@@ -83,7 +83,7 @@ export default function AnimalList() {
     return (
         <div className="page-container">
             <Menu />
-            <Animals title="Todos os animais cadastrados"/>
+            <Animals title="Todos os nossos amigatos disponíveis"/>
                 <div className="container">
                     {animalsList.map((animal) => (
                         <CardAnimal
@@ -92,12 +92,18 @@ export default function AnimalList() {
                             name={animal.animalName}
                             description={animal.animalDescription}
                             imageUrl={animal.photo}
-                            estagioDeVida={animal.animalAge}
                             status={animal.statusAnimal}
                             onRemove={() => handleOpenModal(animal.id)}
                             admin={false}
                             onEdit={() => handleEditAnimal(animal.id)}
                             onView={() => handlewExpandView(animal.id)}
+                            estagioDeVida={
+                                animal.animalAge === 'YOUNG' 
+                                  ? 'Jovem' 
+                                  : animal.animalAge === 'ADULT' 
+                                  ? 'Adulto' 
+                                  : 'Velho'
+                              }
                         />
                     ))}
                     <ConfirmBox
@@ -109,5 +115,4 @@ export default function AnimalList() {
                 </div>
         </div>
     );
-    
 }

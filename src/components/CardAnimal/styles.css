@@ -22,14 +22,14 @@
     top: 5px;
     width: 100%;
     display: flex;
-    gap: 120px;
+    gap: 60px;
     padding: 5px 10px;
     position: absolute;
 }
 
 .tag {
     border-radius: 4px;
-    width: 80px;
+    width: 120px;
     height: 20px;
     font-size: 16px;
     align-items: center;

@@ -10,6 +10,11 @@ export const deleteAnimal = async (animalToRemove) => {
     return res
 }
 
+export const getAllAvailable = async () => {
+    const res = await api.get('/animal/getAvailable')
+    return res
+}
+
 export const postAdoptionHistory = async (adoptionHistory) => {
     const animals =  await getAllAnimals()
 

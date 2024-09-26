@@ -21,8 +21,36 @@ export default function AnimalProfileAdmin(){
         const formData = new FormData(form);
         const fileInput = formData.get('photo');
         
-        formData.set("animalIsCastrated", formData.get("animalIsCastrated") == "Castrado")
-        formData.set("animalIsVaccinated", formData.get("animalIsVaccinated") == "Vacinado")
+        formData.set("animalIsCastrated", formData.get("animalIsCastrated") == "CADASTRADO")
+        formData.set("animalIsVaccinated", formData.get("animalIsVaccinated") == "VACINADO")
+
+        if (formData.get("statusAnimal") == 'ADOTADO'){
+            formData.set("statusAnimal", 'ADOPTED')
+        } else {
+            formData.set("statusAnimal", 'AVAILABLE')
+        }
+
+        if (formData.get("animalSex") == 'MACHO'){
+            formData.set("animalSex", 'MALE')
+        } else{
+            formData.set("animalSex", 'FEMALE')
+        }
+
+        if (formData.get("animalSpecie") == 'CACHORRO'){
+            formData.set("animalSpecie", 'DOG')
+        } else if (formData.get("animalSpecie") == 'GATO'){
+            formData.set("animalSpecie", 'CAT')
+        } else {
+            formData.set("animalSpecie", 'OTHER')
+        }
+
+        if (formData.get("animalAge") == 'FILHOTE'){
+            formData.set("animalSpanimalAgeecie", 'YOUNG')
+        } else if (formData.get("animalAge") == 'ADULTO'){
+            formData.set("animalAge", 'ADULT')
+        } else {
+            formData.set("animalAge", 'SENIOR')
+        }
         
         const formObject = Object.fromEntries(formData.entries());
 
@@ -30,16 +58,16 @@ export default function AnimalProfileAdmin(){
             const reader = new FileReader();
             
             reader.onload = async () => {
-                const base64String = reader.result.split(',')[1]; // Extrai apenas o conteúdo Base64
+                const base64String = reader.result.split(',')[1]; 
                 
-                formData.set('photo', base64String); // Sobrescreve o arquivo com Base64
+                formData.set('photo', base64String);
 
                 console.log(Object.fromEntries(formData.entries())); 
             
                 try {
-                    const res = await postAnimal(formData); // Faz o post
+                    const res = await postAnimal(formData); 
                     router.push("/animalListAdmin")
-                    setError(""); // Limpa qualquer erro
+                    setError(""); 
                 } catch (error) {
                     console.log(error)
                     setError("Dados inválidos ou erro no servidor");
@@ -51,7 +79,7 @@ export default function AnimalProfileAdmin(){
                 setError("Erro ao ler o arquivo");
             };
     
-            reader.readAsDataURL(fileInput); // Converte o arquivo em Base64
+            reader.readAsDataURL(fileInput);
         } else {
             console.error('Nenhum arquivo encontrado.');
             setError("Nenhum arquivo encontrado");
@@ -66,12 +94,12 @@ export default function AnimalProfileAdmin(){
             <InputAnimalsPicture name="photo"/>
             <div className="center-form">
                 <FormInput  name="animalName"  className="form-input" placeholder="Nome" contentEditable={false} />
-                <FormSelect name="statusAnimal" className="form-select" defaultValue="Status" options={["ADOPTED", "AVAILABLE"]}/>
-                <FormSelect name="animalSex" className="form-select" defaultValue="Sexo" options={["MALE", "FEMALE"]}/>
-                <FormSelect name="animalSpecie" className="form-select" defaultValue="Tipo" options={["DOG", "CAT", "OTHER"]}/>
-                <FormSelect name="animalAge" className="form-select" defaultValue="Estágio da vida" options={["YOUNG", "ADULT", "SENIOR" ]}/>
-                <FormSelect name="animalIsCastrated" className="form-select" defaultValue="É castrado ?" options={["Castrado", "Não castrado"]}/>
-                <FormSelect name="animalIsVaccinated" className="form-select" defaultValue="É vacinado ?" options={["Vacinado", "Não vacinado"]}/>
+                <FormSelect name="statusAnimal" className="form-select" defaultValue="Status" options={["ADOTADO", "DISPONÍVEL"]}/>
+                <FormSelect name="animalSex" className="form-select" defaultValue="Sexo" options={["MACHO", "FÊMEA"]}/>
+                <FormSelect name="animalSpecie" className="form-select" defaultValue="Tipo" options={["CACHORRO", "GATO", "OUTRO"]}/>
+                <FormSelect name="animalAge" className="form-select" defaultValue="Estágio da vida" options={["FILHOTE", "ADULTO", "VELHO" ]}/>
+                <FormSelect name="animalIsCastrated" className="form-select" defaultValue="É castrado ?" options={["CASTRADO", "NÃO CASTRADO"]}/>
+                <FormSelect name="animalIsVaccinated" className="form-select" defaultValue="É vacinado ?" options={["VACINADO", "NÃO VACINADO"]}/>
             </div>
             
             <div className="text-area-container">

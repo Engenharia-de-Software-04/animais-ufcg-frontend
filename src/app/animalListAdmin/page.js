@@ -89,11 +89,17 @@ export default function AnimalListAdmin() {
                             name={animal.animalName}
                             description={animal.animalDescription}
                             imageUrl={animal.photo}
-                            estagioDeVida={animal.animalAge}
-                            status={animal.statusAnimal}
+                            status={animal.statusAnimal === 'ADOPTED' ? 'ADOTADO' : 'DISPONÍVEL'}
                             onRemove={() => handleOpenModal(animal.id)}
                             onEdit={() => handleEditAnimal(animal.id)}
                             admin={session}
+                            estagioDeVida={
+                                animal.animalAge === 'YOUNG' 
+                                  ? 'Jovem' 
+                                  : animal.animalAge === 'ADULT' 
+                                  ? 'Adulto' 
+                                  : 'Velho'
+                              }
                         />
                     ))}
                     <ConfirmBox

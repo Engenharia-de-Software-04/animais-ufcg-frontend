@@ -24,9 +24,10 @@ export default function Menu() {
   return (
     <div>
       <div className="menu-wrapper">
-        <div className="logo">
-          <a href="/"></a>
-        </div>
+        <a href="/">
+          <div className="logo"></div>
+        </a>
+
         <nav className="main-nav">
           <ul className="nav-wrapper">
             <a href="/aboutUs">
