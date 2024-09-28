@@ -6,44 +6,25 @@ import HistoryCard from '@/components/HistoryCard';
 import Animals from '@/components/Animals';
 import { useEffect, useState } from 'react';
 import { getAllAdoptionHistories, getAnimalByID } from '../service';
+import { mapAdoptionHistoryImageAndAnimal, mapImage } from '@/utils/main';
 
 export default function AdoptionHistory() {
   const [adoptionHistoryList, setAdoptionHistoryList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchAdoptionHistory = async () => {
       try {
         const resposta = await getAllAdoptionHistories();
-
         const adoptionHistory = await Promise.all(
-          resposta.data.map(async (adoptionHistoryCurrent) => {
-            if (adoptionHistoryCurrent.photo) {
-              const byteCharacters = atob(adoptionHistoryCurrent.photo);
-              const byteNumbers = new Uint8Array(byteCharacters.length);
-
-              for (let i = 0; i < byteCharacters.length; i++) {
-                byteNumbers[i] = byteCharacters.charCodeAt(i);
-              }
-
-              const blob = new Blob([byteNumbers]);
-              adoptionHistoryCurrent.photo = URL.createObjectURL(blob);
-            }
-
-            if (adoptionHistoryCurrent.animalID) {
-              const animalResponse = await getAnimalByID(
-                adoptionHistoryCurrent.animalID,
-              );
-              adoptionHistoryCurrent['name'] = animalResponse.data.animalName;
-            }
-
-            return adoptionHistoryCurrent;
-          }),
+          resposta.data.map(mapAdoptionHistoryImageAndAnimal),
         );
 
-        console.log(adoptionHistory);
         setAdoptionHistoryList(adoptionHistory);
       } catch (error) {
         console.error('Erro ao buscar animais:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -56,15 +37,20 @@ export default function AdoptionHistory() {
       <Animals title="Patas e histórias" />
       <div className="adoption-history">
         <div className="history-cards">
-          {adoptionHistoryList.map((adoptionHistory) => (
-            <HistoryCard
-              key={adoptionHistory.id}
-              id={adoptionHistory.id}
-              name={adoptionHistory.name}
-              backgroundImage={adoptionHistory.photo}
-              description={adoptionHistory.adoptionReport}
-            />
-          ))}
+          {loading ? (
+              <div style={{display: "flex", justifyContent: "center"}}>
+                <p>Carregando...</p>
+              </div>)
+            :
+              (adoptionHistoryList.map((adoptionHistory) => (
+                <HistoryCard
+                  key={adoptionHistory.id}
+                  id={adoptionHistory.id}
+                  name={adoptionHistory.name}
+                  backgroundImage={adoptionHistory.photo}
+                  description={adoptionHistory.adoptionReport}
+                />
+              )))}
         </div>
       </div>
     </div>

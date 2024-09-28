@@ -1,6 +1,8 @@
-export const mapImage = (animal) => {
-  if (animal.photo) {
-    const byteCharacters = atob(animal.photo);
+import { getAnimalByID } from "@/app/service";
+
+export const mapImage = (element) => {
+  if (element.photo) {
+    const byteCharacters = atob(element.photo);
     const byteNumbers = new Uint8Array(byteCharacters.length);
 
     for (let i = 0; i < byteCharacters.length; i++) {
@@ -8,8 +10,21 @@ export const mapImage = (animal) => {
     }
 
     const blob = new Blob([byteNumbers]);
-    animal.photo = URL.createObjectURL(blob);
+    element.photo = URL.createObjectURL(blob);
   }
 
-  return animal;
+  return element;
 };
+
+export const mapAdoptionHistoryImageAndAnimal = async (adoptionHistory) => {
+  let adoptionHistoryWithPhoto = await mapImage(adoptionHistory)
+
+  if (adoptionHistoryWithPhoto.animalID) {
+    const animalResponse = await getAnimalByID(
+      adoptionHistory.animalID,
+    );
+    adoptionHistoryWithPhoto['name'] = animalResponse.data.animalName;
+  }
+
+  return adoptionHistoryWithPhoto;
+}
