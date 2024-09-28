@@ -38,19 +38,20 @@ export default function AdoptionHistory() {
       <div className="adoption-history">
         <div className="history-cards">
           {loading ? (
-              <div style={{display: "flex", justifyContent: "center"}}>
-                <p>Carregando...</p>
-              </div>)
-            :
-              (adoptionHistoryList.map((adoptionHistory) => (
-                <HistoryCard
-                  key={adoptionHistory.id}
-                  id={adoptionHistory.id}
-                  name={adoptionHistory.name}
-                  backgroundImage={adoptionHistory.photo}
-                  description={adoptionHistory.adoptionReport}
-                />
-              )))}
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <p>Carregando...</p>
+            </div>
+          ) : (
+            adoptionHistoryList.map((adoptionHistory) => (
+              <HistoryCard
+                key={adoptionHistory.id}
+                id={adoptionHistory.id}
+                name={adoptionHistory.name}
+                backgroundImage={adoptionHistory.photo}
+                description={adoptionHistory.adoptionReport}
+              />
+            ))
+          )}
         </div>
       </div>
     </div>

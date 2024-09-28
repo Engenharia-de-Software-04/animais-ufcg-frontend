@@ -1,12 +1,12 @@
-import { getAnimalByID } from "@/app/service";
+import { getAnimalByID } from '@/app/service';
 
 /**
  * Converte a representação em base64 da foto de um animal em uma URL de objeto.
  *
  * @param {Object} element - O objeto que contém a informação do animal, incluindo a foto em formato base64.
  * @returns {Object} - O objeto original com o campo 'photo' atualizado para uma URL de objeto.
- * 
-**/
+ *
+ **/
 export const mapImage = (element) => {
   if (element.photo) {
     const byteCharacters = atob(element.photo);
@@ -31,14 +31,12 @@ export const mapImage = (element) => {
  *
  **/
 export const mapAdoptionHistoryImageAndAnimal = async (adoptionHistory) => {
-  let adoptionHistoryWithPhoto = await mapImage(adoptionHistory)
+  let adoptionHistoryWithPhoto = await mapImage(adoptionHistory);
 
   if (adoptionHistoryWithPhoto.animalID) {
-    const animalResponse = await getAnimalByID(
-      adoptionHistory.animalID,
-    );
+    const animalResponse = await getAnimalByID(adoptionHistory.animalID);
     adoptionHistoryWithPhoto['name'] = animalResponse.data.animalName;
   }
 
   return adoptionHistoryWithPhoto;
-}
+};
