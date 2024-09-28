@@ -10,7 +10,7 @@
 }
 
 .logo {
-  background-image: url("/images/logo.webp");
+  background-image: url('/images/logo.webp');
   background-size: cover; /* Ajusta a imagem para cobrir toda a área da div */
   background-position: center; /* Centraliza a imagem */
   width: 100px; /* A largura será ajustada de acordo com o conteúdo ou a div pai */

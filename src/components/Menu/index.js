@@ -1,23 +1,23 @@
-"use client";
-import "./styles.css";
-import { useState } from "react";
+'use client';
+import './styles.css';
+import { useState } from 'react';
 
 export default function Menu() {
-  const [menuBodyDisplay, setMenuBodyDisplay] = useState("none");
+  const [menuBodyDisplay, setMenuBodyDisplay] = useState('none');
 
   const changeMenu = (event) => {
     const target = event.currentTarget;
 
-    if (target.classList.contains("responsive-menu-opened")) {
-      target.classList.remove("responsive-menu-opened");
-      target.classList.add("responsive-menu-closed");
+    if (target.classList.contains('responsive-menu-opened')) {
+      target.classList.remove('responsive-menu-opened');
+      target.classList.add('responsive-menu-closed');
 
-      setMenuBodyDisplay("block");
+      setMenuBodyDisplay('block');
     } else {
-      target.classList.remove("responsive-menu-closed");
-      target.classList.add("responsive-menu-opened");
+      target.classList.remove('responsive-menu-closed');
+      target.classList.add('responsive-menu-opened');
 
-      setMenuBodyDisplay("none");
+      setMenuBodyDisplay('none');
     }
   };
 
@@ -78,13 +78,13 @@ export default function Menu() {
                 <li>
                   <span className="material-symbols-outlined">
                     import_contacts
-                  </span>{" "}
+                  </span>{' '}
                   Relatos
                 </li>
               </a>
               <a href="https://www.instagram.com/animaisufcg/">
                 <li>
-                  <span className="material-symbols-outlined">call</span>{" "}
+                  <span className="material-symbols-outlined">call</span>{' '}
                   Contato
                 </li>
               </a>

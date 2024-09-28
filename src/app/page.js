@@ -1,13 +1,13 @@
-"use client";
-import React from "react";
-import Link from "next/link"; // Importando o Link do Next.js
-import Menu from "@/components/Menu";
-import { Flex, Box, Image, Text, VStack  } from "@chakra-ui/react";
-import './(screens)/firstScreen'
-import FirstScreen from "./(screens)/firstScreen";
-import SecondScreen from "./(screens)/secondScreen";
-import ThirdScreen from "./(screens)/thirdScreen";
-import FourthScreen from "./(screens)/fourthScreen";
+'use client';
+import React from 'react';
+import Link from 'next/link'; // Importando o Link do Next.js
+import Menu from '@/components/Menu';
+import { Flex, Box, Image, Text, VStack } from '@chakra-ui/react';
+import './(screens)/firstScreen';
+import FirstScreen from './(screens)/firstScreen';
+import SecondScreen from './(screens)/secondScreen';
+import ThirdScreen from './(screens)/thirdScreen';
+import FourthScreen from './(screens)/fourthScreen';
 
 export default function HomePage() {
   return (
@@ -17,13 +17,13 @@ export default function HomePage() {
         <FirstScreen />
       </Link>
       <Link href="http://localhost:3000/animalList" passHref>
-        <SecondScreen/>
+        <SecondScreen />
       </Link>
       <Link href="http://localhost:3000/adoptionHistory" passHref>
-        <ThirdScreen/>
+        <ThirdScreen />
       </Link>
       <Link href="https://www.instagram.com/animaisufcg/" passHref>
-        <FourthScreen/>
+        <FourthScreen />
       </Link>
     </>
   );

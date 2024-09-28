@@ -1,79 +1,78 @@
 .input-animals-text-main {
-    top: -50px;
-    color: #000;
-    opacity: 1;   
+  top: -50px;
+  color: #000;
+  opacity: 1;
 }
 
 .input-animals-text-secondary {
-    top: -100px;
-    color: #FFFFFF;
-    opacity: 0.8;
+  top: -100px;
+  color: #ffffff;
+  opacity: 0.8;
 }
 
-.input-animals-text{
-    z-index: 1 !important;
-    position: relative;
-    left: 0;
-    text-align: center;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-weight: bold;
-    line-height: 20px;
-    pointer-events: none !important;
+.input-animals-text {
+  z-index: 1 !important;
+  position: relative;
+  left: 0;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 20px;
+  pointer-events: none !important;
 }
 
 .input-animals-wrapper {
-    z-index: 1 !important;
-    position: relative;
-    width: 153px;
-    height: 153px;
+  z-index: 1 !important;
+  position: relative;
+  width: 153px;
+  height: 153px;
 }
 
 .img-input-animals-main {
-    top: -10px;
+  top: -10px;
 }
 
-.img-input-animals-secondary{
-    top: 0px;
+.img-input-animals-secondary {
+  top: 0px;
 }
 
 .img-input-animals {
-    position: relative;
-    z-index: 1 !important;
-    width: 153px;
-    height: 153px;
-    border-radius: 50%;
-    object-fit: cover;
+  position: relative;
+  z-index: 1 !important;
+  width: 153px;
+  height: 153px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .input-file {
-    opacity: 0;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    z-index: 10;
+  opacity: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  z-index: 10;
 }
 
 .input-file-wrapper-main {
-    border: 2px solid #000;
+  border: 2px solid #000;
 }
 
 .input-file-wrapper-secondary {
-    border: none !important;
+  border: none !important;
 }
 
 .input-file-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    width: 153px;
-    height: 153px;
-    border-radius: 50%;
-    border: 2px solid #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  width: 153px;
+  height: 153px;
+  border-radius: 50%;
+  border: 2px solid #000;
 }
-

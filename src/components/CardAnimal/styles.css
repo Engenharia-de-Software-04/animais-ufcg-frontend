@@ -1,128 +1,126 @@
 .card {
-    background-color: white;
-    border-radius: 8px;
-    width: 300px;
-    height: 370px;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 8px;
+  width: 300px;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .img {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px; 
-    width: 100%;
-    height: 45%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  height: 45%;
 }
 
 .tags-container {
-    top: 5px;
-    width: 100%;
-    display: flex;
-    gap: 60px;
-    padding: 5px 10px;
-    position: absolute;
+  top: 5px;
+  width: 100%;
+  display: flex;
+  gap: 60px;
+  padding: 5px 10px;
+  position: absolute;
 }
 
 .tag {
-    border-radius: 4px;
-    width: 120px;
-    height: 20px;
-    font-size: 16px;
-    align-items: center;
-    background-color: #21C313;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
+  border-radius: 4px;
+  width: 120px;
+  height: 20px;
+  font-size: 16px;
+  align-items: center;
+  background-color: #21c313;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
 }
 
 .available {
-    background-color: #DC3545;
-    width: 100px;
+  background-color: #dc3545;
+  width: 100px;
 }
 
-.adopted{
-    background-color: #FFB210;
+.adopted {
+  background-color: #ffb210;
 }
-
 
 .container-text {
-    width: 100%;
-    min-height: 150px;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 100%;
+  min-height: 150px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .name {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    margin: 5px 0;
-    color: black;
-    font-size: 1rem;
-    text-align: justify;
-    min-height: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  margin: 5px 0;
+  color: black;
+  font-size: 1rem;
+  text-align: justify;
+  min-height: 30px;
 }
 
 .description {
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    text-overflow: ellipsis;
-    text-align: justify;
-    font-size: 1rem;
-    min-height: 70px;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  text-overflow: ellipsis;
+  text-align: justify;
+  font-size: 1rem;
+  min-height: 70px;
 }
 
-
 .button {
-    border-radius: 8px;
-    width: 80px;
-    height: 30px;
-    background-color: #FFB210;
-    border: none;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-weight: 700;
+  border-radius: 8px;
+  width: 80px;
+  height: 30px;
+  background-color: #ffb210;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
 }
 
 .buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 100px;
-    margin-top: 5px;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  margin-top: 5px;
+  justify-content: center;
 }
 
 .adoption-button {
-    width: 80%;
-    background-color: #FFB210;
-    border-radius: 8px;
-    color: #fff;
-    margin-bottom: 20px !important;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    position: relative;
-    padding: 5px 0px;
+  width: 80%;
+  background-color: #ffb210;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 20px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  position: relative;
+  padding: 5px 0px;
 }
 
 .adoption-button span {
-    margin-right: 10px;
+  margin-right: 10px;
 }

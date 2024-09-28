@@ -1,10 +1,10 @@
-import React from "react";
-import { Flex, Box, Image, Text, VStack, Link } from "@chakra-ui/react";
+import React from 'react';
+import { Flex, Box, Image, Text, VStack, Link } from '@chakra-ui/react';
 
 const FourthScreen = () => {
   return (
     <Flex
-      direction={{ base: "column", md: "row" }}
+      direction={{ base: 'column', md: 'row' }}
       bg="#FFFFFF"
       position="relative"
       cursor="pointer"
@@ -15,7 +15,7 @@ const FourthScreen = () => {
       <Box
         flex="1"
         p={5}
-        display={{ base: "none", md: "flex" }}
+        display={{ base: 'none', md: 'flex' }}
         alignItems="flex-start"
         justifyContent="center"
         textAlign="center"
@@ -26,9 +26,9 @@ const FourthScreen = () => {
           <Text
             fontFamily="Cursive, serif"
             lineHeight="1.5"
-            fontSize={{ base: "48px", md: "90px" }}
+            fontSize={{ base: '48px', md: '90px' }}
             color="#FFB210"
-            padding='30px'
+            padding="30px"
           >
             Animais UFCG
           </Text>
@@ -37,7 +37,7 @@ const FourthScreen = () => {
       <Box
         flex="1"
         bg="#FFFFFF"
-        display={{ base: "none", md: "flex" }}
+        display={{ base: 'none', md: 'flex' }}
         justifyContent="flex-end"
         order={2}
       >
@@ -51,7 +51,7 @@ const FourthScreen = () => {
       </Box>
       <VStack
         flex="1"
-        display={{ base: "flex", md: "none" }}
+        display={{ base: 'flex', md: 'none' }}
         align="center"
         justify="flex-start"
         textAlign="center"
@@ -77,7 +77,7 @@ const FourthScreen = () => {
       </VStack>
       <Box
         flex="1"
-        display={{ base: "flex", md: "none" }}
+        display={{ base: 'flex', md: 'none' }}
         justifyContent="center"
         alignItems="center"
         paddingY={4}
@@ -91,7 +91,7 @@ const FourthScreen = () => {
         />
       </Box>
       <Box
-        display={{ base: "flex", md: "none" }}
+        display={{ base: 'flex', md: 'none' }}
         borderRadius="25px"
         p={4}
         textAlign="center"
@@ -111,12 +111,12 @@ const FourthScreen = () => {
         position="absolute"
         bottom="230px"
         left="0"
-        width={{ base: "90%", md: "60%" }}
+        width={{ base: '90%', md: '60%' }}
         bg="rgba(165, 232, 241, 0.7)"
         borderRadius="25px"
         zIndex="0"
-        mx={{ base: "auto", md: 0 }}
-        display={{ base: "none", md: "block" }}
+        mx={{ base: 'auto', md: 0 }}
+        display={{ base: 'none', md: 'block' }}
         p={4}
         height="auto"
         order={3}
@@ -131,7 +131,7 @@ const FourthScreen = () => {
         >
           <Text
             fontFamily="Trebuchet MS, serif"
-            fontSize={{ base: "1rem", md: "1.5rem", lg: "1.75rem" }}
+            fontSize={{ base: '1rem', md: '1.5rem', lg: '1.75rem' }}
             color="#3A2719"
             fontWeight="bold"
           >

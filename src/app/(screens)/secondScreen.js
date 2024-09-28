@@ -1,10 +1,10 @@
-import React from "react";
-import { Flex, Box, Image, Text, VStack } from "@chakra-ui/react";
+import React from 'react';
+import { Flex, Box, Image, Text, VStack } from '@chakra-ui/react';
 
 const SecondScreen = () => {
   return (
     <Flex
-      direction={{ base: "column", md: "row" }}
+      direction={{ base: 'column', md: 'row' }}
       bg="#FFB210"
       position="relative"
       cursor="pointer"
@@ -14,7 +14,7 @@ const SecondScreen = () => {
     >
       <VStack
         flex="1"
-        display={{ base: "flex", md: "none" }}
+        display={{ base: 'flex', md: 'none' }}
         align="center"
         justify="center"
         textAlign="center"
@@ -41,7 +41,7 @@ const SecondScreen = () => {
       <Box
         flex="1"
         bg="#FFB210"
-        display={{ base: "flex", md: "none" }}
+        display={{ base: 'flex', md: 'none' }}
         justifyContent="center"
         alignItems="center"
         order={2}
@@ -56,8 +56,8 @@ const SecondScreen = () => {
         />
       </Box>
       <Box
-        display={{ base: "flex", md: "none" }}
-        bg={{ base: "none", md: "rgba(165, 232, 241, 0.7)" }}
+        display={{ base: 'flex', md: 'none' }}
+        bg={{ base: 'none', md: 'rgba(165, 232, 241, 0.7)' }}
         borderRadius="25px"
         p={4}
         textAlign="center"
@@ -76,7 +76,7 @@ const SecondScreen = () => {
       <Box
         flex="1"
         p={5}
-        display={{ base: "none", md: "flex" }}
+        display={{ base: 'none', md: 'flex' }}
         alignItems="flex-start"
         justifyContent="center"
         textAlign="center"
@@ -87,7 +87,7 @@ const SecondScreen = () => {
           <Text
             fontFamily="Cursive, serif"
             lineHeight="1.5"
-            fontSize={{ base: "48px", md: "95px" }}
+            fontSize={{ base: '48px', md: '95px' }}
             color="#3A2719"
           >
             Benção,
@@ -95,7 +95,7 @@ const SecondScreen = () => {
           <Text
             fontFamily="Cursive, serif"
             lineHeight="1.5"
-            fontSize={{ base: "48px", md: "95px" }}
+            fontSize={{ base: '48px', md: '95px' }}
             color="#A5E8F1"
           >
             dindo?!
@@ -106,14 +106,14 @@ const SecondScreen = () => {
       <Box
         flex="1"
         bg="#FFB210"
-        display={{ base: "none", md: "flex" }}
+        display={{ base: 'none', md: 'flex' }}
         order={2}
       >
         <Image
           src="images/dog_second.png"
           alt="Cachorro com chapéu"
           objectFit="cover"
-          width={{ base: "100%", md: "600px" }}
+          width={{ base: '100%', md: '600px' }}
           height="100vh"
         />
       </Box>
@@ -122,13 +122,13 @@ const SecondScreen = () => {
         position="absolute"
         bottom="100px"
         left="0"
-        width={{ base: "90%", md: "60%" }}
+        width={{ base: '90%', md: '60%' }}
         height="150px"
         bg="rgba(165, 232, 241, 0.7)"
         borderRadius="25px"
         zIndex="0"
-        mx={{ base: "auto", md: 0 }}
-        display={{ base: "none", md: "block" }}
+        mx={{ base: 'auto', md: 0 }}
+        display={{ base: 'none', md: 'block' }}
         order={3}
       >
         <Box
@@ -141,7 +141,7 @@ const SecondScreen = () => {
         >
           <Text
             fontFamily="Trebuchet MS, serif"
-            fontSize={{ base: "20px", md: "35px" }}
+            fontSize={{ base: '20px', md: '35px' }}
             color="#3A2719"
             fontWeight="bold"
           >

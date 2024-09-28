@@ -1,35 +1,35 @@
-.adoption-history-wrapper{
-    height: 100%;
+.adoption-history-wrapper {
+  height: 100%;
 }
 
 .adoption-history {
-    /* background-color: red; */
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 10;
+  /* background-color: red; */
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
 .adoption-history::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background-image: url('/images/bg-patinhas.webp'); */
-    /* background-repeat: repeat; */
-    /* background-size: auto; */
-    /* background-position: center; */
-    opacity: 0.15; 
-    z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-image: url('/images/bg-patinhas.webp'); */
+  /* background-repeat: repeat; */
+  /* background-size: auto; */
+  /* background-position: center; */
+  opacity: 0.15;
+  z-index: -1;
 }
 
-.history-cards { 
-    position: absolute;
-    width: 80%;
-    height: 100%;
+.history-cards {
+  position: absolute;
+  width: 80%;
+  height: 100%;
 }

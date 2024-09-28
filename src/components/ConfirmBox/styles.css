@@ -1,87 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=Peralta:wght@400;700&display=swap');
 
 .modal-content {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #FFB210;
-    padding: 20px;
-    border-radius: 35px;
-    text-align: center;
-    width: 80%;
-    max-width: 500px;
-    height: auto;
-    margin: 100px auto;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffb210;
+  padding: 20px;
+  border-radius: 35px;
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  height: auto;
+  margin: 100px auto;
 }
 
 .modal-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 20px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+  width: 100%;
 }
 
 .overlay button {
-    height: 40px;
-    width: 120px;
-    cursor: pointer;
-    border: none;
-    border-radius: 35px;
+  height: 40px;
+  width: 120px;
+  cursor: pointer;
+  border: none;
+  border-radius: 35px;
 }
 
 .remove-button {
-    background-color: green;
-    color: white;
-    font-weight: 700;
+  background-color: green;
+  color: white;
+  font-weight: 700;
 }
 
 .cancel-button {
-    background-color: red;
-    color: white;
-    font-weight: 700;
+  background-color: red;
+  color: white;
+  font-weight: 700;
 }
 
 .message {
-    color: #3A2719;
-    font-family: 'Peralta', sans-serif;
-    width: 100%;
-    font-size: clamp(16px, 2vw, 24px);
+  color: #3a2719;
+  font-family: 'Peralta', sans-serif;
+  width: 100%;
+  font-size: clamp(16px, 2vw, 24px);
 }
 
 .text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
 }
 
-
 @media (max-width: 600px) {
-    .modal-content {
-        width: 90%;
-        margin: 50px auto;
-        padding: 15px;
-    }
+  .modal-content {
+    width: 90%;
+    margin: 50px auto;
+    padding: 15px;
+  }
 
-    .message {
-        font-size: clamp(14px, 1.5vw, 20px);
-    }
+  .message {
+    font-size: clamp(14px, 1.5vw, 20px);
+  }
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

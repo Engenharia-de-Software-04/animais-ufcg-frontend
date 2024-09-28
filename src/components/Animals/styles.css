@@ -1,34 +1,34 @@
 .animals-header {
-    position: relative;
-    top: -20px;
-    width: 100%;
-    height: 220px;
-    background-image: url('/images/animals.webp');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+  position: relative;
+  top: -20px;
+  width: 100%;
+  height: 220px;
+  background-image: url('/images/animals.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .animals-body {
-    z-index: -1;
-    position: relative;
-    top: -55px;
-    width: 100%;
-    background-color: #FAC857;
-    padding: 20px 0px;
+  z-index: -1;
+  position: relative;
+  top: -55px;
+  width: 100%;
+  background-color: #fac857;
+  padding: 20px 0px;
 }
 
 .animals-body h1 {
-    font-family: "Paytone One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #3A2719;
-    font-size: 30px;
-    text-align: center;
+  font-family: 'Paytone One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #3a2719;
+  font-size: 30px;
+  text-align: center;
 }
 
 @media (max-width: 1000px) {
-    .animals-header {
-        background-size: cover;
-    }
+  .animals-header {
+    background-size: cover;
+  }
 }

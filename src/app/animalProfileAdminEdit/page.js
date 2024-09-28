@@ -1,24 +1,24 @@
-"use client";
-import "./styles.css";
-import Menu from "@/components/Menu";
-import FormInput from "@/components/FormInput/FormInput";
-import FormSelect from "@/components/FormSelect/FormSelect";
-import TextArea from "@/components/TextArea";
-import InputAnimalsPicture from "@/components/InputAnimalsPicture";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { getAnimalByID, updateAnimal } from "../service";
+'use client';
+import './styles.css';
+import Menu from '@/components/Menu';
+import FormInput from '@/components/FormInput/FormInput';
+import FormSelect from '@/components/FormSelect/FormSelect';
+import TextArea from '@/components/TextArea';
+import InputAnimalsPicture from '@/components/InputAnimalsPicture';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { getAnimalByID, updateAnimal } from '../service';
 
 export default function EditAnimal() {
   const [animalData, setAnimalData] = useState(null);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [id, setId] = useState();
   const router = useRouter();
 
   useEffect(() => {
     const getIdFromQuery = () => {
       const params = new URLSearchParams(window.location.search);
-      return params.get("id");
+      return params.get('id');
     };
 
     const id = getIdFromQuery();
@@ -32,7 +32,7 @@ export default function EditAnimal() {
           const res = await getAnimalByID(id);
           setAnimalData(res.data);
         } catch (err) {
-          setError("Erro ao carregar os dados do animal.");
+          setError('Erro ao carregar os dados do animal.');
         }
       };
 
@@ -45,26 +45,27 @@ export default function EditAnimal() {
 
     let updatedValue = value;
 
-    if (name === "animalIsCastrated") {
-      updatedValue = value === "CASTRADO";
-    } else if (name === "animalIsVaccinated") {
-      updatedValue = value === "VACINADO";
+    if (name === 'animalIsCastrated') {
+      updatedValue = value === 'CASTRADO';
+    } else if (name === 'animalIsVaccinated') {
+      updatedValue = value === 'VACINADO';
     }
 
     if (name === 'statusAnimal') {
-      updatedValue = value === 'ADOTADO' ? 'ADOPTED' : 'AVAILABLE'
+      updatedValue = value === 'ADOTADO' ? 'ADOPTED' : 'AVAILABLE';
     }
 
     if (name == 'animalSex') {
-      updatedValue = value === 'MACHO' ? 'MALE' : 'FEMALE'
+      updatedValue = value === 'MACHO' ? 'MALE' : 'FEMALE';
     }
 
-    if ( name == 'animalSpecie') {
-      updatedValue = value === 'CACHORRO' ? 'DOG': 'GATO' ? 'CAT' : 'OTHER'
+    if (name == 'animalSpecie') {
+      updatedValue = value === 'CACHORRO' ? 'DOG' : 'GATO' ? 'CAT' : 'OTHER';
     }
 
-    if ( name == 'animalAge') {
-      updatedValue = value === 'FILHOTE' ? 'YOUNG' : 'ADULTO' ? 'ADULT' : 'SENIOR'
+    if (name == 'animalAge') {
+      updatedValue =
+        value === 'FILHOTE' ? 'YOUNG' : 'ADULTO' ? 'ADULT' : 'SENIOR';
     }
 
     setAnimalData((prevData) => ({
@@ -77,16 +78,16 @@ export default function EditAnimal() {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const fileInput = formData.get("photo");
+    const fileInput = formData.get('photo');
 
     const reader = new FileReader();
 
     reader.onload = async () => {
-      const base64String = reader.result.split(",")[1];
+      const base64String = reader.result.split(',')[1];
 
       setAnimalData((prevData) => ({ ...prevData, photo: base64String }));
 
-      formData.set("photo", base64String);
+      formData.set('photo', base64String);
 
       try {
         console.log({ ...animalData, photo: base64String });
@@ -94,16 +95,16 @@ export default function EditAnimal() {
           ...animalData,
           photo: base64String,
         });
-        router.push("/animalListAdmin"); 
+        router.push('/animalListAdmin');
       } catch (err) {
         console.log(err);
-        setError("Erro ao atualizar os dados do animal.");
+        setError('Erro ao atualizar os dados do animal.');
       }
     };
 
     reader.onerror = (error) => {
-      console.error("Erro ao ler o arquivo:", error);
-      setError("Erro ao ler o arquivo");
+      console.error('Erro ao ler o arquivo:', error);
+      setError('Erro ao ler o arquivo');
     };
 
     reader.readAsDataURL(fileInput);
@@ -128,48 +129,66 @@ export default function EditAnimal() {
           />
 
           <FormSelect
-            defaultValue={animalData.statusAnimal === 'ADOCTED' ? 'ADOTADO' : 'DISPONÍVEL' || "Status"}
+            defaultValue={
+              animalData.statusAnimal === 'ADOCTED'
+                ? 'ADOTADO'
+                : 'DISPONÍVEL' || 'Status'
+            }
             onChange={handleInputChange}
             name="statusAnimal"
             className="form-select"
-            options={["ADOTADO", "DISPONÍVEL"]}
+            options={['ADOTADO', 'DISPONÍVEL']}
           />
           <FormSelect
             className="form-select"
-            defaultValue={animalData.animalSex === 'MALE' ? 'MACHO' : 'FÊMEA' || "Sexo"}
-            options={["MACHO", "FÊMEA"]}
+            defaultValue={
+              animalData.animalSex === 'MALE' ? 'MACHO' : 'FÊMEA' || 'Sexo'
+            }
+            options={['MACHO', 'FÊMEA']}
             name="animalSex"
             onChange={handleInputChange}
           />
           <FormSelect
             className="form-select"
-            defaultValue={animalData.animalSpecie === 'DOG' ? 'CACHOROO' : 'CAT' ? 'GATO' : 'OUTRO'|| "Tipo"}
-            options={["CACHORRO", "GATO", "OUTRO"]}
+            defaultValue={
+              animalData.animalSpecie === 'DOG'
+                ? 'CACHOROO'
+                : 'CAT'
+                  ? 'GATO'
+                  : 'OUTRO' || 'Tipo'
+            }
+            options={['CACHORRO', 'GATO', 'OUTRO']}
             name="animalSpecie"
             onChange={handleInputChange}
           />
           <FormSelect
             className="form-select"
-            defaultValue={animalData.animalAge === 'YOUNG' ? 'FILHOTE' : 'ADULT' ? 'ADULTO' : 'VELHO' || "Estágio da vida"}
-            options={["FILHOTE", "ADULTO", "VELHO"]}
+            defaultValue={
+              animalData.animalAge === 'YOUNG'
+                ? 'FILHOTE'
+                : 'ADULT'
+                  ? 'ADULTO'
+                  : 'VELHO' || 'Estágio da vida'
+            }
+            options={['FILHOTE', 'ADULTO', 'VELHO']}
             name="animalAge"
             onChange={handleInputChange}
           />
           <FormSelect
             className="form-select"
             defaultValue={
-              animalData.animalIsCastrated ? "CASTRADO" : "NÃO CASTRADO"
+              animalData.animalIsCastrated ? 'CASTRADO' : 'NÃO CASTRADO'
             }
-            options={["CASTRADO", "NÃO CASTRADO"]}
+            options={['CASTRADO', 'NÃO CASTRADO']}
             name="animalIsCastrated"
             onChange={handleInputChange}
           />
           <FormSelect
             className="form-select"
             defaultValue={
-              animalData.animalIsVaccinated ? "VACINADO" : "NÃO VACINADO"
+              animalData.animalIsVaccinated ? 'VACINADO' : 'NÃO VACINADO'
             }
-            options={["VACINADO", "NÃO VACINADO"]}
+            options={['VACINADO', 'NÃO VACINADO']}
             name="animalIsVaccinated"
             onChange={handleInputChange}
           />
@@ -185,7 +204,7 @@ export default function EditAnimal() {
           />
         </div>
 
-        {error && <p style={{ color: "red", marginBottom: "10px" }}>{error}</p>}
+        {error && <p style={{ color: 'red', marginBottom: '10px' }}>{error}</p>}
         <button type="submit" className="button-save">
           Editar
         </button>
