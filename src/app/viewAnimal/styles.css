@@ -176,4 +176,9 @@
     top: 100px;
     padding-left: 0px;
   }
+
+  .view-body .description-left .description-wrapper {
+    width: 350px;
+  }
+
 }
