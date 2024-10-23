@@ -9,6 +9,12 @@
   list-style: none;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -17,7 +23,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  background-image: url('/images/plano_fundo.png') !important;
+  background-image: url('/images/sl_011023_55240_03.jpg') !important;
   background-size: cover !important;
   background-repeat: repeat !important;
   overflow-x: hidden;

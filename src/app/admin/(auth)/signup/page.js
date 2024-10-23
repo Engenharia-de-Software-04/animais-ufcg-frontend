@@ -63,9 +63,6 @@ export default function Register() {
         justify="center"
         h="100vh"
         w="100vw"
-        bgImage="url('/images/plano_fundo.png')"
-        bgSize="cover"
-        bgPosition="center"
         p="2rem"
       >
         <Flex
